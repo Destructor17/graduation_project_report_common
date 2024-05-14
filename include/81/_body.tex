@@ -5,7 +5,7 @@
 \input{graduation_project_report_common/include/81/0-annotation.tex}
 
 \newpage
-тут лист ТЗ, а не эта пустая страница
+!!!тут лист ТЗ, а не эта пустая страница!!!
 
 \newpage
 \ESKDthisStyle{formII}
@@ -32,6 +32,13 @@
     \newpage
     \section{#1}
     \input{\VarGPRMainDir/sections/#2/main.tex}
+    \newpage
+}}
+\newcommand{\GPRSectionFile}[2]{{
+    \def \VarGPRSection {#2}
+    \newpage
+    \section{#1}
+    \input{\VarGPRMainDir/sections/#2.tex}
     \newpage
 }}
 \newcommand{\GPRSubSection}[2]{{
@@ -70,15 +77,16 @@
 
 \GPRPhantomSection{ЗАКЛЮЧЕНИЕ}{\VarGPRMainDir/conclusion.tex}
 
-% \newpage
-% \phantomsection
-% \addcontentsline{toc}{section}{СПИСОК СОКРАЩЕНИЙ}
-% \section*{СПИСОК СОКРАЩЕНИЙ}
-% \input{graduation_project_report_common/include/81/abbreviations.tex}
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{СПИСОК СОКРАЩЕНИЙ}
+\section*{СПИСОК СОКРАЩЕНИЙ}
+\input{graduation_project_report_common/include/81/abbreviations.tex}
 
 \newpage
 \phantomsection
 \addcontentsline{toc}{section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
 \section*{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
 \input{graduation_project_report_common/include/81/literature.tex}
+
 
