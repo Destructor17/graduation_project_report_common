@@ -45,6 +45,20 @@
     \subsection{#1}
     \input{\VarGPRMainDir/sections/\VarGPRSection/#2.tex}
 }}
+\newcommand{\GPRImage}[4]{{
+    \begin{figure}[H] % !htb
+        \centering
+    
+        \includegraphics[width=#4]{#3}
+    
+        \caption{#2}
+    
+        \label{fig:#1}
+    \end{figure}
+}}
+\newcommand{\GPRSeeImageRef}[1]{{
+    (см. рисунок \ref{fig:#1}.)
+}}
 
 \GPRPhantomSection{ВВЕДЕНИЕ}{\VarGPRMainDir/introduction.tex}
 \input{\VarGPRMainDir/sections.tex}
