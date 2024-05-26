@@ -27,6 +27,10 @@
     \input{#2}
     \newpage
 }}
+\newcommand{\GPRSectionHeader}[1]{{
+    \newpage
+    \section{#1}
+}}
 \newcommand{\GPRSection}[2]{{
     \def \VarGPRSection {#2}
     \newpage
@@ -41,8 +45,11 @@
     \input{\VarGPRMainDir/sections/#2.tex}
     \newpage
 }}
-\newcommand{\GPRSubSection}[2]{{
+\newcommand{\GPRSubSectionHeader}[1]{{
     \subsection{#1}
+}}
+\newcommand{\GPRSubSection}[2]{{
+    \GPRSubSectionHeader{#1}
     \input{\VarGPRMainDir/sections/\VarGPRSection/#2.tex}
 }}
 \newcommand{\GPRImage}[4]{{
@@ -58,6 +65,33 @@
 }}
 \newcommand{\GPRSeeImageRef}[1]{{
     (см. рисунок \ref{fig:#1}.)
+}}
+\newcommand{\GPREconomicSection}[1]{{
+    \def \VarGPREconomicAnnotaion {#1}
+    \input{graduation_project_report_common/include/81/economic.tex}
+    \newpage
+}}
+\newcommand{\GPREquationDescItem}[2]{{
+    \item[
+        \ifdim\theGPREquationDescItemCount pt=0pt
+            где
+        \fi
+    ] $#1$ -- #2
+    \addtocounter{GPREquationDescItemCount}{1}
+}}
+\newcounter{GPREquationDescItemCount}
+\newcommand{\GPREquation}[2]{{
+    \setcounter{GPREquationDescItemCount}{0}
+    \begin{equation}
+        #2
+        \label{eq:#1}
+    \end{equation}
+}}
+\newcommand{\GPREquationDesc}[1]{{
+    \def \VarGPREquationDescItemUsed {0}
+    \begin{itemize}
+        #1
+    \end{itemize}
 }}
 
 \GPRPhantomSection{ВВЕДЕНИЕ}{\VarGPRMainDir/introduction.tex}

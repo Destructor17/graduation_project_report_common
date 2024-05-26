@@ -1,0 +1,297 @@
+\GPRSectionHeader{Технико-экономическое обоснование}
+
+\VarGPREconomicAnnotaion
+
+\GPRSubSectionHeader{Расчёт объёма функций программного модуля}
+
+Общий объём ПО определяется по формуле (\ref{eq:economic_V_0}), исходя из объёма функций, реализуемых программой.
+\GPREquation{economic_V_0}{
+    V_0=\sum\limits_{i=0}^{n}V_i
+}
+\GPREquationDesc{
+    \GPREquationDescItem{V_0}{общий объём ПО;}
+    \GPREquationDescItem{V_i}{объём функций ПО;}
+    \GPREquationDescItem{n}{общее число функций.}
+}
+
+В том случае, когда на стадии технико-экономического обоснования проекта невозможно рассчитать точный объём функций, то данный объём может быть получен на основании прогнозируемой оценки имеющихся фактических данных по аналогичным проектам, выполненным ранее, или применением нормативов по каталогу функций.
+
+По каталогу функций на основании функций разрабатываемых модулей определяется общий объём. Также на основе зависимостей от организационных и технологических условий, был скорректирован объём на основе экспертных оценок.
+
+Уточнённый объём ПО определяется по формуле (\ref{eq:economic_V_y}).
+\GPREquation{economic_V_y}{
+    V_y=\sum\limits_{i=0}^{n}V_{yi}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{V_y}{уточнённый объём ПО;}
+    \GPREquationDescItem{V_{yi}}{уточнённый объём отдельной функции в строках исходного кода.}
+}
+
+Перечень и объём функций приведён в таблице \ref{tab:economic_loc}.
+
+\begin{table}[H]
+    \centering\small
+
+    \caption{Перечень и объём функций}
+    \label{tab:economic_loc}
+
+    \begin{tabular}{|c|p{8cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|}
+        \hline
+        \multirow{2}*{Номер функции} & \multirow{2}*{Наименование (содержание) функции} & \multicolumn{2}{p{5cm}<{\centering}|}{Объём функции строк исходного кода} \\
+        \cline{3-4}
+        & & По каталогу $V_y$ & Уточнённый $V_{yi}$ \\
+        \hline
+        \input{graduation_project_report_common/config/economic_loc.tex}
+    \end{tabular}
+\end{table}
+
+С учётом информации, указанной в таблице \ref{tab:economic_loc}, уточнённый объём ПО составил \envGPRActualLOC ~ строк кода вместо предполагаемого количества \envGPREstimateLOC.
+
+\GPRSubSectionHeader{Расчёт полной себестоимости программного модуля}
+
+Стоимостная оценка программного средства у разработчика предполагает составление сметы затрат, которая включает следующие статьи расходов:
+
+\begin{itemize}
+    \item[1.] Отчисления на социальные нужды ($\textup{Р}_\textup{соц}$).
+    \item[2.] Материалы и комплектующие изделия ($\textup{Р}_\textup{м}$).
+    \item[3.] Спецоборудование ($\textup{Р}_\textup{с}$).
+    \item[4.] Машинное время ($\textup{Р}_\textup{мв}$).
+    \item[5.] Расходы на научные командировки ($\textup{Р}_\textup{нк}$).
+    \item[6.] Прочие прямые расходы ($\textup{Р}_\textup{пр}$).
+    \item[7.] Накладные расходы ($\textup{Р}_\textup{нр}$).
+    \item[8.] Затраты на освоение и сопровождение программного средства ($\textup{Р}_\textup{о}$) и ($\textup{Р}_\textup{со}$).
+\end{itemize}
+
+Полная себестоимость ($\textup{С}_\textup{п}$) разработки программного продукта рассчитывается как сумма расходов по всем статьям с учётом рыночной стоимости аналогичных продуктов.
+
+Основной статьёй расходов на создание программного продукта является заработная плата проекта (основная и дополнительная) разработчиков (исполнителей) ($\textup{ЗП}_\textup{осн} + \textup{ЗП}_\textup{доп}$), в число которых принято включать инженеров-программистов, руководителей проекта, системных архитекторов, дизайнеров, разработчиков баз данных, Web-мастеров и других специалистов, необходимых для решения специальных задач в команде.
+
+Расчёт заработной платы разработчиков программного продукта начинается с определения:
+
+\begin{itemize}
+    \item[1.] Продолжительности времени разработки ($\textup{Ф}_\textup{рв}$), которое устанавливается студентом экспертным путём с учётом сложности, новизны программного обеспечения и фактически затраченного времени. 
+    В данном дипломном проекте ($\textup{Ф}_\textup{рв}$) -- \envGPRDevTimeMonthReadable.
+    \item[2.] Количества разработчиков программного обеспечения. 
+\end{itemize}
+
+В данном дипломном проекте будет разработчик: инженер-программист.
+Заработная плата разработчиков определятся как сумма основной и дополнительной заработной платы всех исполнителей.
+\GPREquation{economic_ZP_osn}{
+    \textup{ЗП}_\textup{осн}=\textup{Т}_\textup{бтс} \cdot \frac{\textup{Т}_\textup{к}}{\textup{Ф}_\textup{эфф.р.в.}} \cdot \textup{Ф}_\textup{рв} \cdot \textup{К}_\textup{пр}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{Т}_\textup{бтс}}{размер базовой ставки, на текущий момент равный \envGPRBaseRate~бел.руб.;}
+    \GPREquationDescItem{\textup{Т}_\textup{к}}{тарифный коэффициент согласно разряду исполнителя;}
+    \GPREquationDescItem{\textup{Ф}_\textup{эфф.р.в.}}{среднее количество рабочих дней;}
+    \GPREquationDescItem{\textup{Ф}_\textup{рв}}{фонд рабочего времени исполнителя (продолжительность разработки программного модуля), дни;}
+    \GPREquationDescItem{\textup{К}_\textup{пр}}{коэффициент премии, $\textup{К}_\textup{пр}$ = \envGPRPremiumCoefficient.}
+}
+
+Тарифный коэффициент согласно \envGPRDevCategory~разряду инженера-программиста $\textup{Т}_\textup{к} = \envGPRDevCategoryMultiplier$.
+Продолжительность разработки программного продукта -- \envGPRDevTimeDays ~дней, количество рабочих дней в месяце на текущий год составляет \envGPRWorkingDaysInMonth~дня. Рассчитаем основную заработную плату инженера-программиста, согласно формуле \ref{eq:economic_ZP_osn}.
+
+$\textup{ЗП}_\textup{осн} = \envGPRBaseRate \cdot \frac{\envGPRDevCategoryMultiplier}{\envGPRWorkingDaysInMonth} \cdot \envGPRDevTimeDays \cdot \envGPRPremiumCoefficient = \envGPRValueZPosn$  (белорусских рублей).
+
+Дополнительная заработная плата $\textup{ЗП}_\textup{доп}$ каждого исполнителя рассчитывается от
+основной заработной платы по формуле \ref{eq:economic_ZP_dop}.
+\GPREquation{economic_ZP_dop}{
+    \textup{ЗП}_\textup{доп}=\textup{ЗП}_\textup{осн} \cdot \frac{\textup{Н}_\textup{доп.зп}}{100\%}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{ЗП}_\textup{осн}}{надбавка дополнительной заработной платы, равная \envGPRExtraPaymentPercents\%.}
+}
+
+Рассчитаем дополнительную заработную плату инженера-программиста,
+согласно формуле \ref{eq:economic_ZP_dop}:
+
+$\textup{ЗП}_\textup{доп}=\envGPRValueZPosn \cdot \frac{\envGPRExtraPaymentPercents\%}{100\%} = \envGPRValueZPdop$ (белорусских рублей).
+
+Результаты вычислений внесём в таблицу \ref{tab:economic_salary}
+
+\begin{table}[H]
+    \centering\small
+
+    \caption{Расчет заработной платы}
+    \label{tab:economic_salary}
+
+    \begin{tabular}{|c|c|c|c|c|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|}
+        \hline
+        \multirow{2}*{\rotatebox[origin=c]{90}{Категория работников\hspace{1cm}}} 
+        & \multirow{2}*{\rotatebox[origin=c]{90}{Разряд\hspace{2.5cm}}} 
+        & \multirow{2}*{\rotatebox[origin=c]{90}{Тарифные коэффициент ($\textup{Т}_\textup{к}$)\hspace{0.5cm}}} 
+        & \multirow{2}*{\rotatebox[origin=c]{90}{$\textup{Ф}_\textup{эфф.р.в}$, (дн.)\hspace{1.8cm}}} 
+        & \multirow{2}*{\rotatebox[origin=c]{90}{Коэффициент премии ($\textup{К}_\textup{пр}$)\hspace{0.5cm}}} 
+        & \multicolumn{3}{c|}{Заработная плата, бел.руб} \\ 
+        \cline{6-8}
+        & & & & & 
+        \rotatebox[origin=c]{90}{Основная\hspace{1.7cm}} 
+        & \rotatebox[origin=c]{90}{Дополнительная\hspace{1.5cm}}
+        & \rotatebox[origin=c]{90}{Всего\hspace{1.8cm}} \\[4.3cm]
+        \hline
+        Инженер-программист & \envGPRDevCategory & \envGPRDevCategoryMultiplier & \envGPRWorkingDaysInMonth & \envGPRPremiumCoefficient & \envGPRValueZPosn & \envGPRValueZPdop & \envGPRValueZP \\
+        \hline
+        Итого & - & - & - & - & \envGPRValueZPosn & \envGPRValueZPdop & \envGPRValueZP \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Таким образом, как видно из таблицы, заработная плата инженера-программиста составляет \envGPRValueZP~бел. руб.
+
+Отчисления на социальные нужды $\textup{Р}_\textup{соц}$ определяются по формуле (\ref{eq:economic_social}) в соответствии с действующим законодательством по нормативу.
+\GPREquation{economic_social}{
+    \textup{Р}_\textup{соц}=(\textup{ЗП}_\textup{осн} + \textup{ЗП}_\textup{доп}) \cdot \frac{35\%}{100\%}
+}
+
+Рассчитаем отчисления на социальные нужды:
+
+$\textup{Р}_\textup{соц}=(\envGPRValueZPosn + \envGPRValueZPdop) \cdot \frac{35\%}{100\%} = \envGPRValueRsoc$ (белорусских рубля).
+
+Расходы на материалы и комплектующие $\textup{Р}_\textup{м}$ отражают расходы на магнитные носители, бумагу, красящие ленты и другие материалы, необходимые для разработки программного продукта. 
+Норма расхода материалов в суммарном выражении определяется в процентах к основной заработной плате (\ref{eq:economic_material}).
+\GPREquation{economic_material}{
+    \textup{Р}_\textup{м}=\textup{ЗП}_\textup{осн} \cdot \frac{\textup{Н}_\textup{мз}}{100}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{Н}_\textup{мз}}{норма расхода материалов от основной заработной платы, в процентах.}
+}
+Рассчитаем расходы на материалы и комплектующий, приняв $\textup{Н}_\textup{мз}$ равным \envGPRMaterialPercents\%:
+
+$\textup{Р}_\textup{м} = \envGPRValueZPosn \cdot \frac{\envGPRMaterialPercents\%}{100\%} = \envGPRValueRm$ (белорусских рубля).
+
+Расходы на спецоборудование $\textup{Р}_\textup{с}$ включают затраты на приобретение технических и программных средств специального назначения, необходимых для разработки методического пособия, включая расходы на проектирование, изготовление, отладку и другое.
+
+В данном дипломном проекте приобретение какого-либо спецоборудования не предусматривалось. 
+Так как спецоборудование не было приобретено, расходы равны нулю.
+
+Расходы на машинное время $\textup{Р}_\textup{мв}$ включают оплату машинного времени, необходимого для разработки и отладки программного продукта. 
+Они определяются в машино-часах по нормативам на 100 строк исходного кода машинного времени. 
+$\textup{Р}_\textup{мв}$ определяется по формуле (\ref{eq:economic_machine_time}).
+\GPREquation{economic_machine_time}{
+    \textup{Р}_\textup{мв} = \textup{Ц}_{\textup{мв}i} \cdot \frac{V_\textup{О}}{100} \cdot \textup{Н}_\textup{мв}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{Ц}_{\textup{мв}i}}{цена одного машинного часа (\envGPRMachineHourCost~бел. руб.);}
+    \GPREquationDescItem{V_\textup{О}}{уточнённый общий объём машинного кода;}
+    \GPREquationDescItem{\textup{Н}_\textup{мв}}{
+        норматив расхода машинного времени на отладку 100 строк кода в машино-часах. 
+        Принимается в размере \envGPRDebugPortion.
+    }
+}
+
+Рассчитаем расходы на машинное время:
+
+$\textup{Р}_\textup{мв} = \envGPRMachineHourCost \cdot \frac{\envGPRActualLOC}{100} \cdot \envGPRDebugPortion = \envGPRValueRmv$ (белорусских рублей).
+
+Расходы по статье <<Научные командировки>> $\textup{Р}_\textup{нк}$ берутся либо по смете научных командировок, разрабатываемой на предприятии, либо в процентах от основной заработной платы исполнителей (10-15\%).
+Так как в данном проекте научные командировки не предусмотрены, данная статься не рассчитывается.
+
+Прочие затраты $\textup{Р}_\textup{пр}$ включают затраты на приобретение специальной научно-технической информации и специальной литературы. Определяются по нормативу в процентах к основной заработной плате исполнителей. 
+Так как специальная научно-техническая информация и специальная литература не приобреталась, то данная статья не рассчитывается.
+
+Затраты на накладные расходы $\textup{Р}_\textup{нр}$ связаны с содержанием вспомогательных хозяйств, а также с расходами на общехозяйственные нужды. Определяется по нормативу в процентах к основной заработной плате по формуле (\ref{eq:economic_other}).
+\GPREquation{economic_other}{
+    \textup{Р}_\textup{нр} = \frac{\textup{Н}_\textup{нр}}{100\%} \cdot \textup{ЗП}_\textup{осн}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{Н}_\textup{нр}}{норматив накладных расходов.}
+}
+В данном дипломном проекте норматив накладных расходов равен 40\%, поэтому затраты на накладные расходы равны:
+
+$\textup{Р}_\textup{нр} = \frac{\envGPROtherSpendsPercents\%}{100\%} \cdot \envGPRValueZPosn = \envGPRValueRnr$ (белорусских рублей).
+
+Сумма вышеперечисленных расходов по статьям $\textup{СЗ}$ на программный продукт служит исходной базой для расчёта затрат на освоение и сопровождение программного продукта. 
+Они рассчитываются по формуле (\ref{eq:economic_spends_sum}).
+\GPREquation{economic_spends_sum}{
+    \textup{СЗ} = \textup{ЗП}_\textup{осн} + \textup{ЗП}_\textup{доп} + \textup{Р}_\textup{соц} + \textup{Р}_\textup{м} + \textup{Р}_\textup{с} + \textup{Р}_\textup{мв} + \textup{Р}_\textup{нк} + \textup{Р}_\textup{пр} + \textup{Р}_\textup{нр}
+}
+
+тогда
+
+$\textup{СЗ} = \envGPRValueZPosn + \envGPRValueZPdop + \envGPRValueRsoc + \envGPRValueRm + \envGPRValueRmv + \envGPRValueRnr = \envGPRValueSR$ (белорусских рубля).
+
+Организация-разработчик участвует в освоении программного продукта и несёт соответствующие затраты, на которые составляется смета, оплачиваемая заказчиком по договору. 
+Затраты на освоение Ро определяются по установленному нормативу от суммы затрат по формуле (\ref{eq:economic_use}).
+\GPREquation{economic_use}{
+    \textup{Р}_\textup{о} = \textup{СЗ} \cdot \frac{\textup{Н}_\textup{о}}{100\%}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{Н}_\textup{о}}{
+        установленный норматив затрат на освоение. 
+        Для данного дипломного проекта принимается равной \envGPRUsageSpendsPercents\%.
+    }
+}
+
+Рассчитаем затраты на освоение продукта:
+
+$\textup{Р}_\textup{о} = \envGPRValueSR \cdot \frac{\envGPRUsageSpendsPercents\%}{100\%} = \envGPRValueRo$ (белорусских рублей).
+
+Организация-разработчик осуществляет сопровождение программного продукта и несёт расходы, которые оплачиваются заказчиком в соответствии с договором и сметой на сопровождение. 
+Расходы на сопровождение $\textup{Р}_\textup{со}$ рассчитываются по формуле (\ref{eq:economic_support}).
+\GPREquation{economic_support}{
+    \textup{Р}_\textup{со} = \textup{СЗ} \cdot \frac{\textup{Н}_\textup{со}}{100\%}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{Н}_\textup{со}}{
+        установленный норматив затрат на сопровождение программного продукта. 
+        Для данного дипломного проекта принимается равным \envGPRSupportSpendsPercents\%.
+    }
+}
+Рассчитаем расходы на сопровождение:
+
+$\textup{Р}_\textup{со} = \envGPRValueSR \cdot \frac{\envGPRSupportSpendsPercents\%}{100\%} = \envGPRValueRso$ (белорусских рублей).
+
+Полная себестоимость ($\textup{СП}$) разработки программного продукта рассчитывается как сумма расходов по всем статьям. 
+Она определяется по формуле (\ref{eq:economic_sum_2}).
+\GPREquation{economic_sum_2}{
+    \textup{СП} = \textup{СЗ} + \textup{Р}_\textup{о} + \textup{Р}_\textup{со}
+}
+Рассчитаем полную себестоимость продукта:
+
+$\textup{СП} = \envGPRValueSR + \envGPRValueRo + \envGPRValueRso = \envGPRValueSP$ (белорусских рубля).
+
+Результаты вычислений занесём в таблицу \ref{tab:economic_spends}.
+
+
+\begin{table}[H]
+    \centering\small
+
+    \caption{Себестоимость программного продукта}
+    \label{tab:economic_spends}
+
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Наименование статей затрат          & Норматив, \%                      & Сумма затрат, бел.руб.    \\
+        \hline
+        Заработная плата, всего             & -                                 & \envGPRValueZP            \\
+        \hline
+        Основная заработная плата           & -                                 & \envGPRValueZPosn         \\
+        \hline
+        Дополнительная заработная плата     & -                                 & \envGPRValueZPdop         \\
+        \hline
+        Отчисления на социальные нужды      & 35\%                              & \envGPRValueRsoc          \\
+        \hline
+        Спецоборудование                    & Не применялось                    & -                         \\
+        \hline
+        Материалы и комплектующие изделия   & \envGPRMaterialPercents           & \envGPRValueRm            \\
+        \hline
+        Машинное время                      & -                                 & \envGPRValueRmv           \\
+        \hline
+        Научные командировки                & Не планировались                  & -                         \\
+        \hline
+        Прочие затраты                      & Не применялись                    & -                         \\
+        \hline
+        Накладные расходы                   & \envGPROtherSpendsPercents \%     & \envGPRValueRnr           \\
+        \hline
+        Сумма затрат                        & -                                 & \envGPRValueSR            \\
+        \hline
+        Затраты на освоение                 & \envGPRUsageSpendsPercents \%     & \envGPRValueRo            \\
+        \hline
+        Затраты на сопровождение            & \envGPRSupportSpendsPercents \%   & \envGPRValueRso           \\
+        \hline
+        Полная себестоимость                & -                                 & \envGPRValueSP            \\
+        \hline
+    \end{tabular}
+\end{table}
+
+В результате всех расчётов полная себестоимость программного продукта
+составила \envGPRValueSP~бел.руб.

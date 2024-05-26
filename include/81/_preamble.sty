@@ -12,6 +12,23 @@
 \usepackage{eskdtotal}
 \usepackage{rotating}
 \usepackage{float}
+\usepackage{multirow}
+\usepackage{blindtext}
+\usepackage{array}
+
+\usepackage[T2A,T1]{fontenc}
+\DeclareSymbolFont{cyrillic}{T2A}{cmr}{m}{n}
+\def\makecyrsymbol#1#2{%
+  \begingroup\edef\temp{\endgroup
+    \noexpand\DeclareMathSymbol{\noexpand#1}
+    {\noexpand\mathalpha}{cyrillic}%
+    {\expandafter\expandafter\expandafter
+     \calccyr\expandafter\meaning\csname T2A\string#2\endcsname\end}}%
+  \temp}
+\expandafter\def\expandafter\calccyr\string\char#1\end{#1}
+
+\makecyrsymbol\Zhe\CYRZH
+
 
 \def \envCode {ДП.\envDiplomStudentGroupName\envDiplomStudentGroupNumber.\envDiplomStudentCard-\envDiplomNumber~81~\envDiplomVersion}
 \def \envDiplomDocumentTitle {ПОЯСНИТЕЛЬНАЯ ЗАПИСКА}
