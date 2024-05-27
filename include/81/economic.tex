@@ -272,7 +272,7 @@ $\textup{СП} = \envGPRValueSR + \envGPRValueRo + \envGPRValueRso = \envGPRValu
         \hline
         Спецоборудование                    & Не применялось                    & -                         \\
         \hline
-        Материалы и комплектующие изделия   & \envGPRMaterialPercents           & \envGPRValueRm            \\
+        Материалы и комплектующие изделия   & \envGPRMaterialPercents \%        & \envGPRValueRm            \\
         \hline
         Машинное время                      & -                                 & \envGPRValueRmv           \\
         \hline
@@ -295,3 +295,102 @@ $\textup{СП} = \envGPRValueSR + \envGPRValueRo + \envGPRValueRso = \envGPRValu
 
 В результате всех расчётов полная себестоимость программного продукта
 составила \envGPRValueSP~бел.руб.
+
+\GPRSubSectionHeader{Расчет цены и прибыли по программному продукту}
+Для определения цены программного продукта необходимо рассчитать плановую
+прибыль П, которая рассчитывается по формуле (\ref{eq:economic_profit}).
+
+\GPREquation{economic_profit}{
+    \textup{П} = \textup{СП} \cdot \frac{R}{100\%}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{СП}}{полная себестоимость программного модуля, бел. руб;}
+    \GPREquationDescItem{R}{уровень рентабельности программного модуля.}
+}
+В данном дипломном проекте уровень рентабельности равен \envGPRProfitabilityPercents\%. 
+Рассчитаем прибыль от реализации:
+
+$\textup{П} = \envGPRValueSP \cdot \frac{\envGPRProfitabilityPercents\%}{100\%} = \envGPRValueP$ (белорусских рублей).
+
+После расчета прибыли от реализации по формуле (\ref{eq:economic_overpriced}) определяется прогнозируемая цена программного продукта без налогов $\textup{Ц}_\textup{п}$.
+
+\GPREquation{economic_overpriced}{
+    \textup{Ц}_\textup{п} = \textup{СП} + \textup{П}
+}
+Рассчитаем цену программного продукта без налогов:
+
+$\textup{Ц}_\textup{п} = \envGPRValueSP + \envGPRValueP = \envGPRValueCp$ (белорусских рублей).
+
+Отпускная цена $\textup{Ц}_\textup{о}$ (цена реализации) программного продукта включает налог на добавленную стоимость и рассчитывается по формуле (\ref{eq:economic_sum_tax}).
+
+\GPREquation{economic_sum_tax}{
+    \textup{Ц}_\textup{о} = \textup{СП} + \textup{П} + \textup{НДС}_\textup{пп}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{НДС}_\textup{пп}}{налог на добавленную стоимость для программного продукта.}
+}
+Для данного программного продукта НДСпп рассчитывается по формуле (\ref{eq:economic_tax}).
+
+\GPREquation{economic_tax}{
+    \textup{НДС}_\textup{пп} = \textup{Ц}_\textup{п} \cdot \frac{\textup{НДС}}{100\%}
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{НДС}}{налог на добавленную стоимость. В настоящее время он составляет \envGPRTaxPercents\%.}
+}
+Рассчитаем $\textup{НДС}_\textup{пп}$ и отпускную цену:
+
+$\textup{НДС}_\textup{пп} = \envGPRValueCp \cdot \frac{\envGPRTaxPercents\%}{100\%} = \envGPRValueNDSpp$ (белорусских рублей).
+
+$\textup{Ц}_\textup{о} = \envGPRValueSP + \envGPRValueP + \envGPRValueNDSpp = \envGPRValueCo$ (белорусских рублей).
+
+Прибыль от реализации программного продукта за вычетом налога на прибыль является чистой прибылью ПЧ. 
+Чистая прибыль остаётся организации-разработчику и представляет собой экономический эффект от создания нового программного продукта.
+Она рассчитывается по формуле (\ref{eq:profit_after_tax}).
+
+\GPREquation{profit_after_tax}{
+    \textup{ПЧ} = \textup{П} \cdot \left( 1 - \frac{\textup{Н}_\textup{п}}{100\%} \right)
+}
+\GPREquationDesc{
+    \GPREquationDescItem{\textup{Н}_\textup{п}}{
+        ставка налога на прибыль. 
+        В настоящее время он равен \envGPRIncomeTaxPercents\%.
+    }
+}
+
+Рассчитаем чистую прибыль:
+
+$\textup{ПЧ} = \envGPRValueP \cdot \left( 1 - \frac{\envGPRIncomeTaxPercents\%}{100\%} \right) = \envGPRValuePC$ (белорусских рублей).
+
+Результаты расчётов цены и прибыли по программному продукту сведены в
+таблицу \ref{tab:economic_price}.
+
+\begin{table}[H]
+    \centering\small
+
+    \caption{Расчёт отпускной цены и чистой прибыли программного модуля}
+    \label{tab:economic_price}
+
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Наименование статей затрат & Норматив, \% & Сумма затрат, бел. руб. \\
+        \hline
+        Полная себестоимость & - & \envGPRValueSP \\
+        \hline
+        Прибыль & \envGPRProfitabilityPercents & \envGPRValueP \\
+        \hline
+        Цена без НДС & - & \envGPRValueCp \\
+        \hline
+        НДС & \envGPRTaxPercents & \envGPRValueNDSpp \\
+        \hline
+        Отпускная цена & - & \envGPRValueCo \\
+        \hline
+        Чистая прибыль & - & \envGPRValuePC \\
+        \hline
+    \end{tabular}
+\end{table}
+
+В ходе произведенных расчетов определены основные экономические
+показатели: 
+полная себестоимость -- \envGPRValueSP~бел.руб.; 
+прогнозируемая цена -- \envGPRValueCp~бел.руб.;
+чистая прибыль -- \envGPRValuePC~бел.руб.

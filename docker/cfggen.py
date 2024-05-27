@@ -28,43 +28,12 @@ for loc in config["economic_data"]["lines_of_code"]:
     ]
     economic_loc_content += " & ".join(map(str, loc)) + " \\\\ \\hline\n"
 
-category_multiplier = [
-    1,
-    1.16,
-    1.35,
-    1.57,
-    1.73,
-    1.9,
-    2.03,
-    2.17,
-    2.32,
-    2.48,
-    2.65,
-    2.84,
-    3.04,
-    3.25,
-    3.48,
-    3.72,
-    3.98,
-    4.24,
-    4.56,
-    4.88,
-    5.22,
-    5.59,
-    5.98,
-    6.4,
-    6.85,
-    7.33,
-    7.84,
-][config["economic_data"]["dev_category"] - 1]
-
-
 working_days_month = 22
 dev_time_days = config["economic_data"]["dev_time_months"] * 30
 
 value_ZP_osn = round(
     config["economic_data"]["base_rate"]
-    * category_multiplier
+    * config["economic_data"]["dev_category_multiplier"]
     * dev_time_days
     * config["economic_data"]["premium_coefficient"]
     / working_days_month
@@ -97,6 +66,16 @@ value_Ro = round(value_SR * config["economic_data"]["usage_spends_percents"] / 1
 value_Rso = round(value_SR * config["economic_data"]["support_spends_percents"] / 100)
 
 value_SP = value_SR + value_Ro + value_Rso
+
+value_P = round(value_SP * config["economic_data"]["profitability_percents"] / 100)
+
+value_Cp = value_SP + value_P
+
+value_NDS_pp = round(value_Cp * config["economic_data"]["tax_percents"] / 100)
+
+value_Co = value_SP + value_P + value_NDS_pp
+
+value_PC = round(value_P * (1 - (config["economic_data"]["income_tax_percents"] / 100)))
 
 with open("../config/env.sty", "w") as file:
     # config['department']['']
@@ -156,7 +135,7 @@ with open("../config/env.sty", "w") as file:
 \def \envGPRWorkingDaysInMonth{{{working_days_month}}}
 \def \envGPRBaseRate {{{config["economic_data"]["base_rate"]}}}
 \def \envGPRDevCategory {{{config["economic_data"]["dev_category"]}}}
-\def \envGPRDevCategoryMultiplier {{{category_multiplier}}}
+\def \envGPRDevCategoryMultiplier {{{config["economic_data"]["dev_category_multiplier"]}}}
 \def \envGPRPremiumCoefficient {{{config["economic_data"]["premium_coefficient"]}}}
 \def \envGPRValueZPosn {{{value_ZP_osn}}}
 \def \envGPRExtraPaymentPercents {{{config["economic_data"]["extra_payment_percents"]}}}
@@ -176,9 +155,14 @@ with open("../config/env.sty", "w") as file:
 \def \envGPRSupportSpendsPercents {{{config["economic_data"]["support_spends_percents"]}}}
 \def \envGPRValueRso {{{value_Rso}}}
 \def \envGPRValueSP {{{value_SP}}}
-
-
-
+\def \envGPRProfitabilityPercents {{{config["economic_data"]["profitability_percents"]}}}
+\def \envGPRValueP {{{value_P}}}
+\def \envGPRValueCp {{{value_Cp}}}
+\def \envGPRTaxPercents {{{config["economic_data"]["tax_percents"]}}}
+\def \envGPRValueNDSpp {{{value_NDS_pp}}}
+\def \envGPRValueCo {{{value_Co}}}
+\def \envGPRIncomeTaxPercents {{{config["economic_data"]["income_tax_percents"]}}}
+\def \envGPRValuePC {{{value_PC}}}
 
 
 
