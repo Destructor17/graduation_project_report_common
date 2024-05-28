@@ -44,7 +44,7 @@ value_ZP_dop = round(
 )
 
 value_ZP = value_ZP_osn + value_ZP_dop
-value_Rsoc = round(value_ZP_osn * 0.35)
+value_Rsoc = round(value_ZP * 0.35)
 value_R_m = round(value_ZP_osn * config["economic_data"]["material_percents"] / 100)
 
 value_R_mv = round(
