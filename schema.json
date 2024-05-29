@@ -72,7 +72,15 @@
                     "default": "Выполнил",
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "groupName",
+                "groupNumber",
+                "card",
+                "surname",
+                "initials",
+                "info"
+            ]
         },
         "teacher": {
             "type": "object",
@@ -94,7 +102,12 @@
                     "default": "Руководитель",
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "surname",
+                "initials",
+                "info"
+            ]
         },
         "economic": {
             "type": "object",
@@ -116,7 +129,12 @@
                     "default": "по экономическому разделу",
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "surname",
+                "initials",
+                "info"
+            ]
         },
         "espd": {
             "type": "object",
@@ -138,7 +156,12 @@
                     "default": "по ЕСПД",
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "surname",
+                "initials",
+                "info"
+            ]
         },
         "recendent": {
             "type": "object",
@@ -180,7 +203,13 @@
                         "<<Брестский государственный технический универсистет>>"
                     ]
                 }
-            }
+            },
+            "required": [
+                "surname",
+                "initials",
+                "info",
+                "moreInfo"
+            ]
         },
         "department": {
             "type": "object",
@@ -202,15 +231,175 @@
                     "default": "Заведующий кафедрой ИИТ",
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "surname",
+                "initials",
+                "info"
+            ]
         },
         "year": {
             "type": "string",
             "default": "2024"
+        },
+        "economic_data": {
+            "type": "object",
+            "default": {
+                "lines_of_code": [
+                    {
+                        "func_code": 109,
+                        "func_name": "Управление вводом/выводом",
+                        "estimate": 2400,
+                        "actual": 1645
+                    },
+                    {
+                        "func_code": 201,
+                        "func_name": "Генерация структуры базы данных",
+                        "estimate": 4300,
+                        "actual": 18
+                    }
+                ],
+                "dev_time_months": 3,
+                "base_rate": 250,
+                "dev_category": 7,
+                "dev_category_multiplier": 1.47,
+                "premium_coefficient": 1.4,
+                "extra_payment_percents": 20,
+                "material_percents": 3,
+                "machine_hour_cost": 5,
+                "debug_portion": 0.8,
+                "other_spends_percents": 40,
+                "usage_spends_percents": 5,
+                "support_spends_percents": 5,
+                "profitability_percents": 25,
+                "tax_percents": 20,
+                "income_tax_percents": 20
+            },
+            "properties": {
+                "lines_of_code": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "func_code": {
+                                "type": "integer"
+                            },
+                            "func_name": {
+                                "type": "string"
+                            },
+                            "estimate": {
+                                "type": "integer"
+                            },
+                            "actual": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "func_code",
+                            "func_name",
+                            "estimate",
+                            "actual"
+                        ]
+                    }
+                },
+                "dev_time_months": {
+                    "type": "integer",
+                    "default": 3
+                },
+                "base_rate": {
+                    "type": "number",
+                    "default": 250
+                },
+                "dev_category": {
+                    "type": "integer",
+                    "default": 7
+                },
+                "dev_category_multiplier": {
+                    "type": "number",
+                    "default": 1.47
+                },
+                "premium_coefficient": {
+                    "type": "number",
+                    "default": 1.4
+                },
+                "extra_payment_percents": {
+                    "type": "integer",
+                    "default": 20
+                },
+                "material_percents": {
+                    "type": "integer",
+                    "default": 3
+                },
+                "machine_hour_cost": {
+                    "type": "number",
+                    "default": 5
+                },
+                "debug_portion": {
+                    "type": "number",
+                    "default": 0.8
+                },
+                "other_spends_percents": {
+                    "type": "integer",
+                    "default": 40
+                },
+                "usage_spends_percents": {
+                    "type": "integer",
+                    "default": 5
+                },
+                "support_spends_percents": {
+                    "type": "integer",
+                    "default": 5
+                },
+                "profitability_percents": {
+                    "type": "integer",
+                    "default": 25
+                },
+                "tax_percents": {
+                    "type": "integer",
+                    "default": 20
+                },
+                "income_tax_percents": {
+                    "type": "integer",
+                    "default": 20
+                }
+            },
+            "required": [
+                "lines_of_code",
+                "dev_time_months",
+                "base_rate",
+                "dev_category",
+                "dev_category_multiplier",
+                "premium_coefficient",
+                "extra_payment_percents",
+                "material_percents",
+                "machine_hour_cost",
+                "debug_portion",
+                "other_spends_percents",
+                "usage_spends_percents",
+                "support_spends_percents",
+                "profitability_percents",
+                "tax_percents",
+                "income_tax_percents"
+            ]
         }
     },
     "required": [
-        "ministr",
-        "education"
+        "ministry",
+        "education",
+        "university",
+        "cathedra",
+        "title",
+        "enterprise",
+        "number",
+        "version",
+        "city",
+        "student",
+        "teacher",
+        "economic",
+        "espd",
+        "recendent",
+        "department",
+        "year",
+        "economic_data"
     ]
 }
