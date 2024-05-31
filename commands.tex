@@ -3,12 +3,14 @@
     \input{graduation_project_report_common/main.tex}
 }}
 
-\newcommand{\GPRProgramText}[1]{{
+\newcommand{\GPRProgramText}[2]{{
     \def \VarGPRProgramTextAnnotation {#1}
+    \def \VarGPRProgramTextContent {#2}
     \input{graduation_project_report_common/program_text.tex}
 }}
 
-\newcommand{\GPRAttachment}[1]{{
-    \def \VarGPRAttachmentContent {#1}
+\newcommand{\GPRAttachment}[2]{{
+    \def \VarGPRAttachmentIndex {#1}
+    \def \VarGPRAttachmentContent {#2}
     \input{graduation_project_report_common/attachment.tex}
 }}

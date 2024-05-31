@@ -8,3 +8,13 @@ services:
     - ../../:/build
     - ../tmp/data/:/data/
     - ../tmp/temp/:/temp/
+  support_builder:
+    build:
+      dockerfile: support_builder.Dockerfile
+      context: .
+    user: ${MY_UID}:${MY_GID}
+    volumes:
+    - ../../:/build
+    - ../tmp/data/:/data/
+    - ../tmp/temp/:/temp/
+   

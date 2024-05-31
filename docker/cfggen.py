@@ -77,7 +77,7 @@ value_Co = value_SP + value_P + value_NDS_pp
 
 value_PC = round(value_P * (1 - (config["economic_data"]["income_tax_percents"] / 100)))
 
-with open("../config/env.sty", "w") as file:
+with open("../../_build/config/env.sty", "w") as file:
     # config['department']['']
     recendentMoreInfo = "\n    ".join(config["recendent"]["moreInfo"])
     file.write(
@@ -175,5 +175,5 @@ with open("../config/env.sty", "w") as file:
 """
     )
 
-with open("../config/economic_loc.tex", "w") as file:
+with open("../../_build/config/economic_loc.tex", "w") as file:
     file.write(economic_loc_content)

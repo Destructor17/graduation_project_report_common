@@ -381,6 +381,20 @@
                 "tax_percents",
                 "income_tax_percents"
             ]
+        },
+        "program_text": {
+            "type": "object",
+            "properties": {
+                "envelope_lines": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "envelope_lines"
+            ]
         }
     },
     "required": [
@@ -400,6 +414,7 @@
         "recendent",
         "department",
         "year",
-        "economic_data"
+        "economic_data",
+        "program_text"
     ]
 }
