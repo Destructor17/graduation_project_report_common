@@ -9,8 +9,10 @@
     \input{graduation_project_report_common/program_text.tex}
 }}
 
-\newcommand{\GPRAttachment}[2]{{
-    \def \VarGPRAttachmentIndex {#1}
-    \def \VarGPRAttachmentContent {#2}
+\newcommand{\GPRAttachment}[4][0.724]{{
+    \def \VarGPRAttachmentIndex {#2}
+    \def \VarGPRAttachmentTitle {#3}
+    \def \VarGPRAttachmentContent {#4}
+    \def \VarGPRAttachmentScale {#1}
     \input{graduation_project_report_common/attachment.tex}
 }}

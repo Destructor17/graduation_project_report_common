@@ -87,6 +87,7 @@ with open("../../_build/config/env.sty", "w") as file:
 \def \envDiplomCathedra {{{config['cathedra']}}}
 
 \def \envDiplomTitle {{{config['title']}}}
+\def \envDiplomTitleUppercased {{{config['title'].upper()}}}
 \def \envDiplomEnterprice {{{config['enterprise']}}}
 \def \envDiplomNumber {{{config['number']}}}
 \def \envDiplomVersion {{{config['version']}}}

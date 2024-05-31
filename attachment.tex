@@ -11,5 +11,12 @@
   \setcounter{page}{1}
   \ESKDthisStyle{empty}
 
-  \includegraphics{\VarGPRAttachmentContent}
+  \vspace*{\fill}
+  \noindent
+  \hspace*{-\oddsidemargin}%
+  \centering
+  \makebox[0pt][c]{
+    \includegraphics[scale=\VarGPRAttachmentScale]{\VarGPRAttachmentContent}
+  }
+  \vspace*{\fill}
 \end{document}
