@@ -92,6 +92,11 @@ with open("../../_build/config/env.sty", "w") as file:
 \\def \\envDiplomNumber {{{config['number']}}}
 \\def \\envDiplomVersion {{{config['version']}}}
 
+\\def \\VarGPRIllustrationCount {{{config['illustration_count']}}}
+\\def \\VarGPRTableOfContentIndexWidth {{{config['table_of_content_index_width']}pt}}
+
+
+
 \\def \\envDiplomCity {{{config['city']}}}
 
 \\def \\envDiplomStudentGroupName {{{config['student']['groupName']}}}

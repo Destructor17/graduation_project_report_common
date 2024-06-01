@@ -25,14 +25,14 @@
 
 % Если два пункта (1.1)
 % \renewcommand{\l@section}[2]{\@dottedtocline{1}{0em}{24pt}{\textbf{#1}}{#2}}
-\renewcommand{\l@section}[2]{\@dottedtocline{1}{0em}{24pt}{#1}{#2}}
-\renewcommand{\l@subsection}[2]{\@dottedtocline{1}{0em}{24pt}{#1}{#2}}
-\renewcommand{\l@subsubsection}[2]{\@dottedtocline{1}{0em}{24pt}{#1}{#2}}
+% \renewcommand{\l@section}[2]{\@dottedtocline{1}{0em}{24pt}{#1}{#2}}
+% \renewcommand{\l@subsection}[2]{\@dottedtocline{1}{0em}{24pt}{#1}{#2}}
+% \renewcommand{\l@subsubsection}[2]{\@dottedtocline{1}{0em}{24pt}{#1}{#2}}
 
 % Если три пункта (1.1.1)
-% \renewcommand{\l@section}[2]{\@dottedtocline{1}{0em}{32pt}{\textbf{#1}}{#2}}
-% \renewcommand{\l@subsection}[2]{\@dottedtocline{1}{0em}{32pt}{#1}{#2}}
-% \renewcommand{\l@subsubsection}[2]{\@dottedtocline{1}{0em}{32pt}{#1}{#2}}
+\renewcommand{\l@section}[2]{\@dottedtocline{1}{0em}{\VarGPRTableOfContentIndexWidth}{#1}{#2}}
+\renewcommand{\l@subsection}[2]{\@dottedtocline{1}{0em}{\VarGPRTableOfContentIndexWidth}{#1}{#2}}
+\renewcommand{\l@subsubsection}[2]{\@dottedtocline{1}{0em}{\VarGPRTableOfContentIndexWidth}{#1}{#2}}
 
 % = = = = = = = = Стало:
 % Содержание
