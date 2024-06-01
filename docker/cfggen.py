@@ -94,7 +94,7 @@ with open("../../_build/config/env.sty", "w") as file:
 
 \\def \\VarGPRIllustrationCount {{{config['illustration_count']}}}
 \\def \\VarGPRTableOfContentIndexWidth {{{config['table_of_content_index_width']}pt}}
-\\def \\VarGPRAttachmentPagesCount {{{config['attachment_pages_count']}}}
+\\def \\VarGPRIllustrationPagesCount {{{config['attachment_pages_count']}}}
 
 
 
