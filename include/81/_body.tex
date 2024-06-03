@@ -72,8 +72,9 @@
 \newcommand{\GPRSeeImageRef}[1]{{
     (см. рисунок \ref{fig:#1}.)
 }}
-\newcommand{\GPREconomicSection}[1]{{
+\newcommand{\GPREconomicSection}[2]{{
     \def \VarGPREconomicAnnotaion {#1}
+    \def \VarGPREconomicConclusion {#2}
     \input{graduation_project_report_common/include/81/economic.tex}
     \newpage
 }}
