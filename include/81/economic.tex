@@ -114,24 +114,23 @@ $\textup{ЗП}_\textup{доп}=\envGPRValueZPosn \cdot \frac{\envGPRExtraPayment
     \caption{Расчет заработной платы}
     \label{tab:economic_salary}
 
-    \begin{tabular}{|c|c|c|c|c|c|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|}
+    \begin{tabular}{|c|c|c|c|c|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|}
         \hline
-        \multirow{2}*{\rotatebox[origin=c]{90}{Категория работников\hspace{1.2cm}}} 
+        \multirow{2}*{\rotatebox[origin=c]{90}{Категория работников\hspace{1cm}}} 
         & \multirow{2}*{\rotatebox[origin=c]{90}{Разряд\hspace{2.5cm}}} 
         & \multirow{2}*{\rotatebox[origin=c]{90}{Тарифные коэффициент ($\textup{Т}_\textup{к}$)\hspace{0.5cm}}} 
-        & \multirow{2}*{\rotatebox[origin=c]{90}{$\textup{Ф}_\textup{эфф.р.в}$, (дн.)\hspace{1.9cm}}} 
         & \multirow{2}*{\rotatebox[origin=c]{90}{$\textup{Ф}_\textup{рф}$, (дн.)\hspace{2.25cm}}} 
         & \multirow{2}*{\rotatebox[origin=c]{90}{Коэффициент премии ($\textup{К}_\textup{пр}$)\hspace{0.5cm}}} 
         & \multicolumn{3}{c|}{Заработная плата, бел.руб} \\ 
-        \cline{7-9}
-        & & & & & &
+        \cline{6-8}
+        & & & & & 
         \rotatebox[origin=c]{90}{Основная\hspace{1.7cm}} 
         & \rotatebox[origin=c]{90}{Дополнительная\hspace{1.5cm}}
         & \rotatebox[origin=c]{90}{Всего\hspace{1.8cm}} \\[4.3cm]
         \hline
-        Инженер-программист & \envGPRDevCategory & \envGPRDevCategoryMultiplier & \envGPRWorkingDaysInMonth & \envGPRDevTimeDays & \envGPRPremiumCoefficient & \envGPRValueZPosn & \envGPRValueZPdop & \envGPRValueZP \\
+        Инженер-программист & \envGPRDevCategory & \envGPRDevCategoryMultiplier & \envGPRDevTimeDays & \envGPRPremiumCoefficient & \envGPRValueZPosn & \envGPRValueZPdop & \envGPRValueZP \\
         \hline
-        Итого & - & - & - & - & - & \envGPRValueZPosn & \envGPRValueZPdop & \envGPRValueZP \\
+        Итого & - & - & - & - & \envGPRValueZPosn & \envGPRValueZPdop & \envGPRValueZP \\
         \hline
     \end{tabular}
 \end{table}
