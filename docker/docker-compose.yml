@@ -6,5 +6,3 @@ services:
     user: ${MY_UID}:${MY_GID}
     volumes:
     - ../../:/build
-    - ../tmp/data/:/data/
-    - ../tmp/temp/:/temp/
