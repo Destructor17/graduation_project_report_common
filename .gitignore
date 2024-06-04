@@ -1,3 +1,4 @@
 /config
 /tmp/*/*
 !.gitkeep
+__pycache__
