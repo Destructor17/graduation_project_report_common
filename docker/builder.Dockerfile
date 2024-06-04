@@ -1,6 +1,6 @@
-FROM archlinux:latest
+FROM texlive/texlive:latest
 
-RUN pacman -Sy texlive texlive-langcyrillic texlive-langgreek --noconfirm
 COPY fonts /usr/local/share/fonts
 RUN texhash
 RUN fc-cache -f
+RUN apt update && apt install -y librsvg2-bin
