@@ -1,4 +1,4 @@
-\usepackage{caption} % библиотека для заголовков плавающих объектов
+\usepackage[hypcap=false]{caption} % библиотека для заголовков плавающих объектов
 \captionsetup[table]{justification=centering} % заголовки таблиц по центру
 \usepackage{longtable}
 \usepackage{rotating}
@@ -6,6 +6,7 @@
 \usepackage{float}
 \usepackage{array}
 \usepackage{multirow}
+\usepackage{adjustbox}
 
 \DeclareCaptionLabelSeparator{tabsep}{\tablabelsep} % нумерация таблиц
 \DeclareCaptionFormat{split}{\splitformatlabel#1\par\splitformattext#3}
@@ -25,10 +26,12 @@
 \DeclareCaptionLabelSeparator{figsep}{\figlabelsep} % нумерация рисунков
 
 \captionsetup[figure]{
+        name=Рисунок,
         format=plain,                     % формат подписи (plain|hang)
         font=normal,                      % нормальные размер, цвет, стиль шрифта
         skip=.0pt,                        % отбивка под подписью
         parskip=.0pt,                     % отбивка между параграфами подписи
+        belowskip=0pt,
         position=below,                   % положение подписи
         singlelinecheck=true,             % выравнивание по центру, если умещается в одну строку
         justification=centerlast,         % центровка

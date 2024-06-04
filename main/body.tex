@@ -1,3 +1,4 @@
+\ESKDthisStyle{title}
 \input{graduation_project_report_common/main/title_page.tex}
 
 \section*{АННОТАЦИЯ}
@@ -57,15 +58,12 @@
     \newpage
 }}
 \newcommand{\GPRImage}[4]{{
-    \begin{figure}[H] % !htb
-        \centering
-    
-        \includegraphics[width=#4]{#3}
-    
-        \caption{#2}
-    
+    \begin{center}
+        \includegraphics[width=#4]
+            {#3}
+        \captionof{figure}{#2}
         \label{fig:#1}
-    \end{figure}
+    \end{center}
 }}
 \newcommand{\GPRSeeImageRef}[1]{{
     (см. рисунок \ref{fig:#1}.)

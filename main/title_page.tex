@@ -1,52 +1,60 @@
-\begin{ESKDtitlePage}
-  \begin{center}
-    \envDiplomMinistr
+\begin{center}
+  \ESKDthisStyle{title}%
+  \linespread{1.5}%
+  \fontsize{13pt}{13pt}\selectfont%
+  \vfill%
 
-    \envDiplomEducation
+  \begin{center}%
+    \fontsize{16pt}{16pt}\selectfont%
+    \envDiplomMinistr%
 
-    \envDiplomUniversity
-
-    \envDiplomCathedra
-  \end{center}
+    \envDiplomEducation%
+    \fontsize{15pt}{16pt}\selectfont\\
+    \mbox{\envDiplomUniversity}%
+    \fontsize{16pt}{16pt}\selectfont\\
+    \envDiplomCathedra%
+  \end{center}%
   
-  \vfill
+  \vfill%
 
-  \begin{flushright}
-    \begin{minipage}[t]{.45\textwidth}
-      <<К защите допускаю>>
+  \begin{flushright}%
+    \begin{minipage}[t]{.45\textwidth}%
+      <<К защите допускаю>>%
 
-      \envDiplomHeadDepartmentInfo
+      \envDiplomHeadDepartmentInfo%
 
-      \underline{\hspace{3cm}} \envDiplomHeadDepartmentInitials~\envDiplomHeadCathedraSurname
+      \underline{\hspace{3cm}} \envDiplomHeadDepartmentInitials~\envDiplomHeadCathedraSurname%
 
-      \envDiplomDateInput
-    \end{minipage}
-  \end{flushright}
+      \envDiplomDateInput%
+    \end{minipage}%
+  \end{flushright}%
   
-  \vfill
+  \vfill%
 
   \begin{center}
-    \envDiplomTitleUppercased
+    \envDiplomTitleUppercased\\
+    \hspace{0cm}\\
+    ПОЯСНИТЕЛЬНАЯ ЗАПИСКА К ДИПЛОМНОМУ ПРОЕКТУ\\
+    \hspace{0cm}\\
+    \hspace{0cm}\\
+    \begin{center}
+      \fontsize{16pt}{16pt}\selectfont%
+      \textbf{\envCode}%
+    \end{center}
+    \hspace{0cm}\\
+    \hspace{0cm}\\
+    \fontsize{16pt}{16pt}\selectfont%
+    Листов \pageref{LastPage}%
+  \end{center}%
 
-    ПОЯСНИТЕЛЬНАЯ ЗАПИСКА
-  \end{center}
-
-  \vfill
-
-  \begin{center}
-    \envCode
-    
-    Листов \pageref{LastPage}
-  \end{center}
-
-  \vfill
+  \vfill%
 
   \input{graduation_project_report_common/include/_title_page_authors.tex}
 
-  \vfill
+  \vfill%
 
-  \begin{center}
-    \ESKDtheYear
-  \end{center}
-\end{ESKDtitlePage}
+  \begin{center}%
+    \ESKDtheYear%
+  \end{center}%
+\end{center}
   

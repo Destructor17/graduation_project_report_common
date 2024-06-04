@@ -61,12 +61,12 @@
 
 \ProcessOptions\relax
 
-\LoadClass[fontsize=\ESKD@docfont]{scrartcl}
+\LoadClass[fontsize=\ESKD@docfont]{graduation_project_report_common/styles/koma/scrartcl}
 \RequirePackage{eskdlang}
 \RequirePackage[a4paper,formII]{graduation_project_report_common/styles/eskdx/eskdstamp}
 \RequirePackage{eskdindent}
 \RequirePackage{eskdlist}
-\RequirePackage{eskdsect}
+\RequirePackage{graduation_project_report_common/styles/eskdx/eskdsect}
 \RequirePackage{eskdcap}
 \RequirePackage{eskdfootnote}
 \RequirePackage{eskdbiblist}

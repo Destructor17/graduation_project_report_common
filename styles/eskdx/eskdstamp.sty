@@ -52,7 +52,7 @@
 \newlength{\ESKD@padding@h}
 \newlength{\ESKD@padding@v}
 \setlength{\ESKD@padding@h}{3mm}
-\setlength{\ESKD@padding@v}{10mm}
+\setlength{\ESKD@padding@v}{12mm}
 
 \newif\ifESKD@ignstamp
 \ESKD@ignstampfalse
@@ -187,7 +187,7 @@ tmargin=\ESKD@margin@t+\ESKD@padding@v,%
 bmargin=\ESKD@margin@b+\ESKD@padding@v,%
 inner=\ESKD@margin@si+\ESKD@padding@h,%
 outer=\ESKD@margin@so+\ESKD@padding@h,%
-headheight=0mm,headsep=0mm,footskip=0mm]{geometry}
+nohead, nofoot]{geometry}
 
 \RequirePackage{lastpage}
 
