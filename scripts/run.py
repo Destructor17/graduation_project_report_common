@@ -1,6 +1,7 @@
 def run():
     import os
     import argparse
+    from graduation_project_report_common.scripts.prerun_checks import prerun_checks
 
     parser = argparse.ArgumentParser(
         prog="gprctl",
@@ -25,6 +26,7 @@ def run():
         os.environ["MY_UID"] = str(os.getuid())
         os.environ["MY_GID"] = str(os.getgid())
 
+    prerun_checks()
     action = args.action
     if action == "build":
         setup_environ()
