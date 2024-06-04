@@ -32,16 +32,19 @@ if not os.path.exists(
     )
 ):
     if not check_is_git_repo():
-        print("Error: not a git repo")
-        exit(1)
+        ret_code = subprocess.call("git init", shell=True)
+        if ret_code != 0:
+            exit(ret_code)
     if not check_has_gpr_common_submodule():
         ret_code = subprocess.call(
-            "git submodule add https://github.com/Destructor17/graduation_project_report_common.git"
+            "git submodule add https://github.com/Destructor17/graduation_project_report_common.git",
+            shell=True,
         )
         if ret_code != 0:
             exit(ret_code)
     ret_code = subprocess.call(
-        "git submodule update --init graduation_project_report_common/", shell=True
+        "git submodule update --init graduation_project_report_common/",
+        shell=True,
     )
     if ret_code != 0:
         exit(ret_code)
