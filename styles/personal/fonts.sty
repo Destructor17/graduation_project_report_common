@@ -1,0 +1,74 @@
+%%%% XeLaTeX
+
+\usepackage[euenc]{fontspec}
+
+%\fontsize{13}{15.6}\selectfont
+
+%% Что бы работал eskdx и некоторые другие пакеты LaTeX
+\usepackage{xecyr}
+
+%% Для работы шрифтов
+\usepackage{xltxtra}
+%% Ставим Times New Roman - как основной шрифт
+\setmainfont[Mapping=tex-text]{Times New Roman}
+%% Courier New - для моноширного текста
+\setmonofont[Scale=MatchLowercase]{Courier New}
+
+%% Для того чтобы работали стандартные сочетания символов ---, --, << >> и т.п.
+\defaultfontfeatures{Mapping=tex-text}
+
+%% Для работы с русскими текстами (расстановки переносов)
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setdefaultlanguage{russian}
+\newfontfamily\russianfont{Times New Roman}
+\newfontfamily\cyrillicfonttt{Times New Roman}
+\newfontfamily\cyrillicfont{Times New Roman}
+
+%% Для переноса составных слов
+\XeTeXinterchartokenstate=1
+\XeTeXcharclass `\- 24
+\XeTeXinterchartoks 24 0 ={\hskip\z@skip}
+\XeTeXinterchartoks 0 24 ={\nobreak}
+
+%% Misc Part
+\usepackage{blindtext}
+
+\def\russian@capsformat{
+  \def\postchapter{\@aftersepkern}
+  \def\postsection{\@aftersepkern}
+  \def\postsubsection{\@aftersepkern}
+  \def\postsubsubsection{\@aftersepkern}
+  \def\postparagraph{\@aftersepkern}
+  \def\postsubparagraph{\@aftersepkern}
+}
+
+\sloppy
+\exhyphenpenalty=10000
+\doublehyphendemerits=10000
+\finalhyphendemerits=5000
+
+\AtBeginDocument{%
+    \setlength{\parindent}{2.5em}                   % Абзацный отступ. Должен быть одинаковым по всему тексту и равен пяти знакам (ГОСТ Р 7.0.11-2011, 5.3.7).
+}
+
+%%%% LaTeX
+
+%\usepackage{pscyr}
+%\renewcommand{\rmdefault}{ftm}
+%\usepackage[T2A,T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+
+%\DeclareSymbolFont{cyrillic}{T2A}{cmr}{m}{n}
+%\def\makecyrsymbol#1#2{%
+%  \begingroup\edef\temp{\endgroup
+%    \noexpand\DeclareMathSymbol{\noexpand#1}
+%    {\noexpand\mathalpha}{cyrillic}%
+%    {\expandafter\expandafter\expandafter
+%     \calccyr\expandafter\meaning\csname T2A\string#2\endcsname\end}}%
+%  \temp}
+%\expandafter\def\expandafter\calccyr\string\char#1\end{#1}
+
+%\makecyrsymbol\Zhe\CYRZH
+
+

@@ -1,4 +1,6 @@
-FROM mirisbowring/texlive_ctan_full:2019
+FROM archlinux:latest
 
-COPY builder_patch /
+RUN pacman -Sy texlive texlive-langcyrillic texlive-langgreek --noconfirm
+COPY fonts /usr/local/share/fonts
 RUN texhash
+RUN fc-cache -f

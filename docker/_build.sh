@@ -1,8 +1,8 @@
 cd $(dirname $0)/../..
 
 # export PATH="$(cd /usr/local/texlive/????/bin/*; pwd):$PATH"
-
-latexmk -pdf -halt-on-error -output-directory=_build -interaction=nonstopmode
+export HOME=/data/
+latexmk -xelatex -halt-on-error -output-directory=_build -interaction=nonstopmode
 ret_code=$?
 
 if test $ret_code -ne 0

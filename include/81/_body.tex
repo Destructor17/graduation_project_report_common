@@ -1,26 +1,18 @@
 \input{graduation_project_report_common/include/81/0-title-page.tex}
 
-\newpage
 \section*{АННОТАЦИЯ}
 \input{graduation_project_report_common/include/81/0-annotation.tex}
 
 \newpage
-!!!тут лист ТЗ, а не эта пустая страница!!!
+тут лист ТЗ, а не эта пустая страница
 
-\newpage
 \ESKDthisStyle{formII}
-\begingroup
+\renewcommand{\contentsname}{\normalsize \bfseries СОДЕРЖАНИЕ}
 \textbf{
 \tableofcontents
 }
-% \hspace{-48pt}
-\noindent ПРИЛОЖЕНИЕ А. Текст программы
-% ПРИЛОЖЕНИЕ А. Техническое задание \\
-% ПРИЛОЖЕНИЕ Б. Набор тестовых задания для проверки БД \\
-% ПРИЛОЖЕНИЕ В. Результаты загрузки и проверки БД \\
-% ПРИЛОЖЕНИЕ Г. Инструкция по установке ПО \\
-% ПРИЛОЖЕНИЕ Д. Каталог API \\
-% ПРИЛОЖЕНИЕ Е. Текст программы \\
+\hspace{0pt}\\
+ПРИЛОЖЕНИЕ А ТЕКСТ ПРОГРАММЫ
 
 \newcommand{\GPRPhantomSection}[2]{{
     \newpage
@@ -58,6 +50,12 @@
     \GPRSubSectionHeader{#1}
     \input{\VarGPRMainDir/sections/\VarGPRSection/#2.tex}
 }}
+\newcommand{\GPREconomicSection}[2]{{
+    \def \VarGPREconomicAnnotaion {#1}
+    \def \VarGPREconomicConclusion {#2}
+    \input{graduation_project_report_common/include/81/economic.tex}
+    \newpage
+}}
 \newcommand{\GPRImage}[4]{{
     \begin{figure}[H] % !htb
         \centering
@@ -71,12 +69,6 @@
 }}
 \newcommand{\GPRSeeImageRef}[1]{{
     (см. рисунок \ref{fig:#1}.)
-}}
-\newcommand{\GPREconomicSection}[2]{{
-    \def \VarGPREconomicAnnotaion {#1}
-    \def \VarGPREconomicConclusion {#2}
-    \input{graduation_project_report_common/include/81/economic.tex}
-    \newpage
 }}
 \newcommand{\GPREquationDescItem}[2]{{
     \item[

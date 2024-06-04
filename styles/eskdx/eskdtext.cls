@@ -22,7 +22,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{eskdtext}[2010/01/14 v0.98 Textual Documentation]
 
-\newcommand{\ESKD@docfont}{14pt}
+\newcommand{\ESKD@docfont}{13pt}
 \newcommand{\ESKD@float@style}{single}
 \newcommand{\ESKD@equation@style}{single}
 
@@ -50,9 +50,9 @@
 \DeclareOption{footnotearabic}{\PassOptionsToPackage{\CurrentOption}{eskdfootnote}}
 \DeclareOption{footnoteasterisk}{\PassOptionsToPackage{\CurrentOption}{eskdfootnote}}
 \DeclareOption{twoside}{%
-  \PassOptionsToClass{\CurrentOption}{extarticle}%
+  \PassOptionsToClass{\CurrentOption}{scrartcl}%
   \PassOptionsToPackage{\CurrentOption}{eskdstamp}}
-\DeclareOption{draft}{\PassOptionsToClass{\CurrentOption}{extarticle}}
+\DeclareOption{draft}{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 \DeclareOption{formI}{%
   \ClassError{eskdtext}{formI style is for graphical documentaion}{}}
 \DeclareOption{zonelabels}{%
@@ -61,9 +61,9 @@
 
 \ProcessOptions\relax
 
-\LoadClass[\ESKD@docfont]{extarticle}
+\LoadClass[fontsize=\ESKD@docfont]{scrartcl}
 \RequirePackage{eskdlang}
-\RequirePackage[a4paper,formII]{eskdstamp}
+\RequirePackage[a4paper,formII]{graduation_project_report_common/styles/eskdx/eskdstamp}
 \RequirePackage{eskdindent}
 \RequirePackage{eskdlist}
 \RequirePackage{eskdsect}

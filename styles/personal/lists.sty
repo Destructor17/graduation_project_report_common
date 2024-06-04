@@ -1,0 +1,7 @@
+\usepackage{enumitem}
+\setitemize[1]{leftmargin=2cm,topsep=0pt}
+\setitemize[2]{leftmargin=1cm,topsep=0pt}
+
+\newcounter{No}
+\renewenvironment{enumerate}[1][\arabic{No}]{\begin{list}{#1}{\topsep=0pt\parsep=0pt plus 0pt\itemsep=\parsep\leftmargin=0pt\itemindent=0cm\usecounter{No}}\addtolength{\itemindent}{\labelwidth}}{\end{list}}
+\renewenvironment{itemize}[1][{--}]{\begin{list}{#1}{\topsep=0pt\parsep=0pt plus 0cm\itemsep=\parsep\leftmargin=0pt \itemindent=0cm}\addtolength{\itemindent}{\labelwidth}}{\end{list}}

@@ -31,19 +31,19 @@
 \DeclareOption{cp866}{\PassOptionsToPackage{\CurrentOption}{eskdlang}}
 \DeclareOption{utf-8}{\PassOptionsToPackage{\CurrentOption}{eskdlang}}
 \DeclareOption{utf8}{\PassOptionsToPackage{\CurrentOption}{eskdlang}}
-\DeclareOption{draft}{\PassOptionsToClass{\CurrentOption}{article}}
+\DeclareOption{draft}{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 \DeclareOption{twoside}{%
   \ClassError{eskdgraph}{Two side printing is not allowed for
     graphical documentation}{}}
 \DeclareOption{formII}{%
   \ClassError{eskdgraph}{formII style is for textual documentation}{}}
-\DeclareOption*{\PassOptionsToPackage{\CurrentOption}{eskdstamp}}
+\DeclareOption*{\PassOptionsToPackage{\CurrentOption}{graduation_project_report_common/styles/eskdx/eskdstamp}}
 
 \ProcessOptions\relax
 
-\LoadClass{article}
+\LoadClass{scrartcl}
 \RequirePackage{eskdlang}
-\RequirePackage[formI,columnxxvi,ignorestamp]{eskdstamp}
+\RequirePackage[formI,columnxxvi,ignorestamp]{graduation_project_report_common/styles/eskdx/eskdstamp}
 \RequirePackage{eskdinfo}
 
 \newenvironment{ESKDdrawing}{%
