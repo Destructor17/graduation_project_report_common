@@ -10,7 +10,25 @@
 \usepackage{eskdtotal}
 \usepackage{graduation_project_report_common/styles/eskdx/eskdstamp}
 \input{graduation_project_report_common/styles/personal/ref}
-\usepackage{graduation_project_report_common/include/91/_preamble}
+
+\usepackage{_build/config/env}
+\usepackage{graduation_project_report_common/styles/eskdx/eskdstamp}
+\usepackage{relsize}
+\usepackage{blindtext}
+
+\def \envCode {ДП.\envDiplomStudentGroupName\envDiplomStudentGroupNumber.\envDiplomStudentCard-\envDiplomNumber~\VarGPRIllustrationIndex~\envDiplomVersion}
+\def \envDiplomDocumentTitle {\VarGPRIllustrationTitle}
+
+\ESKDletter{}{Д}{П}
+\ESKDcolumnI {\ESKDfontIII \envDiplomTitle \\ \envDiplomDocumentTitle} % наименование изделия/документа
+\ESKDsignature {\envCode} % обозначение документа
+\ESKDcolumnIX {\ESKDfontV \envDiplomEnterprice} % наименование или различительный индекс предприятия
+\ESKDcolumnXIfI {\ESKDfontII\envDiplomStudentSurname~\envDiplomStudentInitials} % Разраб.
+\ESKDcolumnXIfII {\ESKDfontII \envDiplomTeacherSurname~\envDiplomTeacherInitials} % Пров.
+\ESKDcolumnXIfIV {} % (пустая строка после Пров. и перед Н. контр.)
+\ESKDcolumnXIfV {\ESKDfontII \envDiplomEspdSurname~\envDiplomEspdInitials} % Н. контр.
+\ESKDcolumnXIfVI {\ESKDfontII \envDiplomHeadCathedraSurname~\envDiplomHeadDepartmentInitials} % Утв.
+
 
 \newcommand{\GPRIllustration}[4][0.707]{{
     \def \VarGPRIllustrationIndex {#2}

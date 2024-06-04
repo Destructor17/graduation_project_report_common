@@ -1,7 +1,7 @@
-\input{graduation_project_report_common/include/81/0-title-page.tex}
+\input{graduation_project_report_common/main/title_page.tex}
 
 \section*{АННОТАЦИЯ}
-\input{graduation_project_report_common/include/81/0-annotation.tex}
+\input{graduation_project_report_common/main/annotation.tex}
 
 \newpage
 тут лист ТЗ, а не эта пустая страница
@@ -53,7 +53,7 @@
 \newcommand{\GPREconomicSection}[2]{{
     \def \VarGPREconomicAnnotaion {#1}
     \def \VarGPREconomicConclusion {#2}
-    \input{graduation_project_report_common/include/81/economic.tex}
+    \input{graduation_project_report_common/main/economic.tex}
     \newpage
 }}
 \newcommand{\GPRImage}[4]{{
@@ -96,44 +96,18 @@
 \GPRPhantomSection{ВВЕДЕНИЕ}{\VarGPRMainDir/introduction.tex}
 \input{\VarGPRMainDir/sections.tex}
 
-% \section{АНАЛИЗ ПРЕДМЕТНОЙ ОБЛАСТИ}
-% \input{graduation_project_report_common/include/81/1-analyz.tex}
-
-% \newpage
-% \section{ПРОЕКТИРОВАНИЕ СИСТЕМЫ}
-% \input{graduation_project_report_common/include/81/2-uml-use-case.tex}
-% \input{graduation_project_report_common/include/81/2-uml-sequence-diagram.tex}
-% \input{graduation_project_report_common/include/81/2-endpoints.tex}
-% \input{graduation_project_report_common/include/81/2-logic-model.tex}
-% \input{graduation_project_report_common/include/81/2-physic-model.tex}
-
-% \newpage
-% \section{РЕАЛИЗАЦИЯ И ИСПЫТАНИЕ СИСТЕМЫ}
-% \input{graduation_project_report_common/include/81/3-release.tex}
-% \input{graduation_project_report_common/include/81/3-tests.tex}
-
-% \newpage
-% \section{РАСЧЁТ ЭКОНОМИЧЕСКИХ ПОКАЗАТЕЛЕЙ}
-% \input{graduation_project_report_common/include/81/4-economic.t.tex}
-
-% \newpage
-% \phantomsection
-% \addcontentsline{toc}{section}{ЗАКЛЮЧЕНИЕ}
-% \section*{ЗАКЛЮЧЕНИЕ}
-% \input{graduation_project_report_common/include/81/end.tex}
-
 \GPRPhantomSection{ЗАКЛЮЧЕНИЕ}{\VarGPRMainDir/conclusion.tex}
 
 \newpage
 \phantomsection
 \addcontentsline{toc}{section}{СПИСОК СОКРАЩЕНИЙ}
 \section*{СПИСОК СОКРАЩЕНИЙ}
-\input{graduation_project_report_common/include/81/abbreviations.tex}
+\input{graduation_project_report_common/main/abbreviations.tex}
 
 \newpage
 \phantomsection
 \addcontentsline{toc}{section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
 \section*{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
-\input{graduation_project_report_common/include/81/literature.tex}
+\input{graduation_project_report_common/main/literature.tex}
 
 

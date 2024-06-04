@@ -14,7 +14,7 @@ elif dev_time >= 0 and dev_time <= 36:
 else:
     raise ValueError(f"dev_time_months == {dev_time}?")
 
-economic_loc_content = ""
+economic_loc_content = []
 estimate_loc = 0
 actual_loc = 0
 for loc in config["economic_data"]["lines_of_code"]:
@@ -26,7 +26,8 @@ for loc in config["economic_data"]["lines_of_code"]:
         loc["estimate"],
         loc["actual"],
     ]
-    economic_loc_content += " & ".join(map(str, loc)) + " \\\\ \\hline\n"
+    economic_loc_content.append(" & ".join(map(str, loc)))
+economic_loc_content = " \\\\ \\hline\n".join(economic_loc_content)
 
 working_days_month = 22
 dev_time_days = config["economic_data"]["dev_time_months"] * 30
