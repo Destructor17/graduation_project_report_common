@@ -1,7 +1,6 @@
 \LoadClass[
     13pt,
-    a1paper, 
-    landscape,
+    a4paper,
     floatsection,
     pointsection,
     nocolumnsxix,

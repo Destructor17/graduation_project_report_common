@@ -9,3 +9,5 @@
 - [PDF Viewer](vscode:extension/mathematic.vscode-pdf)
 
 Больше документации пока нет.
+
+<!-- curl https://raw.githubusercontent.com/Destructor17/graduation_project_report_common/main/scripts/gprctl.py | python3 - init_example -->
