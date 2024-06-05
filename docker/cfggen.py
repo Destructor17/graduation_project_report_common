@@ -29,6 +29,15 @@ for loc in config["economic_data"]["lines_of_code"]:
     economic_loc_content.append(" & ".join(map(str, loc)))
 economic_loc_content = " \\\\ \\hline\n".join(economic_loc_content)
 
+attachment_list_content = []
+total_attachment_page_count = 0
+for attachment in config["attachments"]:
+    total_attachment_page_count += attachment["pages_count"]
+    attachment_list_content.append(
+        f"ПРИЛОЖЕНИЕ {attachment['letter'].upper()} {attachment['name'].upper()}"
+    )
+attachment_list_content = "\\\\ \n".join(attachment_list_content)
+
 working_days_month = 22
 dev_time_days = config["economic_data"]["dev_time_months"] * 30
 
@@ -95,7 +104,7 @@ with open("../../_build/config/env.sty", "w") as file:
 
 \\def \\VarGPRIllustrationCount {{{config['illustration_count']}}}
 \\def \\VarGPRTableOfContentIndexWidth {{{config['table_of_content_index_width']}pt}}
-\\def \\VarGPRIllustrationPagesCount {{{config['attachment_pages_count']}}}
+\\def \\VarGPRIllustrationPagesCount {{{total_attachment_page_count}}}
 
 
 
@@ -186,3 +195,6 @@ with open("../../_build/config/env.sty", "w") as file:
 
 with open("../../_build/config/economic_loc.tex", "w") as file:
     file.write(economic_loc_content)
+
+with open("../../_build/config/attachment_list.tex", "w") as file:
+    file.write(attachment_list_content)
