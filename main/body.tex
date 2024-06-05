@@ -9,10 +9,8 @@
 
 \ESKDthisStyle{formII}
 \renewcommand{\contentsname}{\normalsize \bfseries СОДЕРЖАНИЕ}
-\textbf{
 \tableofcontents
-}
-\hspace{0pt}\\
+\noindent 
 ПРИЛОЖЕНИЕ А ТЕКСТ ПРОГРАММЫ
 
 \newcommand{\GPRPhantomSection}[2]{{
@@ -25,27 +23,27 @@
 }}
 \newcommand{\GPRSectionHeader}[1]{{
     \newpage
-    \section{\textbf{#1}}
+    \section{#1}
 }}
 \newcommand{\GPRSection}[2]{{
     \def \VarGPRSection {#2}
     \newpage
-    \section{\textbf{#1}}
+    \section{#1}
     \input{\VarGPRMainDir/sections/#2/main.tex}
     \newpage
 }}
 \newcommand{\GPRSectionFile}[2]{{
     \def \VarGPRSection {#2}
     \newpage
-    \section{\textbf{#1}}
+    \section{#1}
     \input{\VarGPRMainDir/sections/#2.tex}
     \newpage
 }}
 \newcommand{\GPRSubSectionHeader}[1]{{
-    \subsection{\textbf{#1}}
+    \subsection{#1}
 }}
 \newcommand{\GPRSubSubSectionHeader}[1]{{
-    \subsubsection{\textbf{#1}}
+    \subsubsection{#1}
 }}
 \newcommand{\GPRSubSection}[2]{{
     \GPRSubSectionHeader{#1}
