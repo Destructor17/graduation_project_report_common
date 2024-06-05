@@ -54,6 +54,11 @@
 \setlength{\ESKD@padding@h}{3mm}
 \setlength{\ESKD@padding@v}{12mm}
 
+\newlength{\ESKD@headheight}
+\setlength{\ESKD@headheight}{0mm}
+\newif\ifESKD@hashead
+\ESKD@hasheadfalse
+
 \newif\ifESKD@ignstamp
 \ESKD@ignstampfalse
 
@@ -164,6 +169,10 @@
 \define@key{eskd}{linethin}{\setlength{\ESKDlineThin}{#1}}
 \define@key{eskd}{vpadding}{\setlength{\ESKD@padding@v}{#1}}
 \define@key{eskd}{hpadding}{\setlength{\ESKD@padding@h}{#1}}
+\define@key{eskd}{headheight}{
+  \setlength{\ESKD@headheight}{#1}
+  \ESKD@hasheadtrue
+}
 
 \DeclareOption*{\edef\@tempa{\noexpand\setkeys{eskd}{\CurrentOption}}\@tempa}
 
@@ -187,7 +196,8 @@ tmargin=\ESKD@margin@t+\ESKD@padding@v,%
 bmargin=\ESKD@margin@b+\ESKD@padding@v,%
 inner=\ESKD@margin@si+\ESKD@padding@h,%
 outer=\ESKD@margin@so+\ESKD@padding@h,%
-nohead, nofoot]{geometry}
+\ifESKD@hashead headheight=\ESKD@headheight\else nohead\fi,%
+nofoot]{geometry}
 
 \RequirePackage{lastpage}
 
