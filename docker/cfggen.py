@@ -106,6 +106,7 @@ with open("../../_build/config/env.sty", "w") as file:
 \\def \\VarGPRTableOfContentIndexWidth {{{config['table_of_content_index_width']}pt}}
 \\def \\VarGPRAttachmentPagesCount {{{total_attachment_page_count}}}
 \\def \\VarGPRAttachmentCount {{{len(config["attachments"])}}}
+\\def \\VarGPRProgramTextAttachmentLetter {{{config['program_text']['letter']}}}
 
 \\def \\envDiplomCity {{{config['city']}}}
 
