@@ -187,6 +187,8 @@ with open("../../_build/config/env.sty", "w") as file:
 
 % Прочее
 \\def \\envGPRProgramTextSize {{{config["program_text"]["size"]}}}
+\\def \\envGPRProgramTextMedia {{{config["program_text"]["media"]}}}
+
 \\def \\envDiplomDateInput{{<<\\underline{{\\hspace{{0.5cm}}}}>> \\underline{{\\hspace{{2cm}}}} \\ESKDtheYear~г.}}
 \\def \\No {{\\textnumero}}
 \\date {{{config["year"]}/месяц/день}}
