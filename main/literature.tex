@@ -5,24 +5,54 @@
 
   \renewcommand{\addcontentsline}[3]{}% Remove functionality of \addcontentsline
   \renewcommand{\section}[2]{}% Remove functionality of \section
-
-  \newcommand{\GPRLiteratureItemURL}[4]{{
+  
+  \newcommand{\GPRLiteratureItem}[2]{{
     \bibitem{#1}
     #2
-    [Электронный ресурс].
-    -- Режим доступа: \url{#3}.
-    -- Дата~доступа: #4.
-  }}
-
-  \newcommand{\GPRLiteratureItem}[4]{{
-    \bibitem{#1}
-    #2
-    [Электронный ресурс].
-    -- Режим доступа: \url{#3}.
-    -- Дата~доступа: #4.
   }} 
 
+  \newcommand{\GPRLiteratureItemURL}[4]{{
+    \GPRLiteratureItem{#1}{
+      #2
+      [Электронный ресурс].
+      -- Режим доступа: \url{#3}.
+      -- Дата~доступа: #4.
+    }
+  }}
+
+  % \makeatletter
+  % \renewcommand\@biblabel[1]{\hspace{25pt}} 
+  % \makeatother
+
+  \makeatletter
+\renewcommand\@biblabel[1]{#1} % No brackets for the references
+\renewenvironment{thebibliography}[1]
+     {\section*{\refname}%
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \addtolength{\labelwidth}{-30pt}
+            \advance\leftmargin-5pt% change 20 pt according to your needs
+            \advance\leftmargin\labelsep
+            \setlength\itemindent{5pt}% change using the inverse of the length used before
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\renewcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
+\makeatother
+
   \begin{thebibliography}{}
+    % \setlength{\labelsep}{0pt}
     \input{\VarGPRMainDir/literature.tex}
   \end{thebibliography}
 \endgroup

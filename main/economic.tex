@@ -6,7 +6,7 @@
 
 Общий объём ПО определяется по формуле (\ref{eq:economic_V_0}), исходя из объёма функций, реализуемых программой.
 \GPREquation{economic_V_0}{
-    V_0=\sum\limits_{i=0}^{n}V_i
+    V_0={\Sigma}_{i=0}^n V_i
 }
 \GPREquationDesc{
     \GPREquationDescItem{V_0}{общий объём ПО;}
@@ -20,7 +20,7 @@
 
 Уточнённый объём ПО определяется по формуле (\ref{eq:economic_V_y}).
 \GPREquation{economic_V_y}{
-    V_y=\sum\limits_{i=0}^{n}V_{yi}
+    V_y={\Sigma}_{i=0}^n V_{yi}
 }
 \GPREquationDesc{
     \GPREquationDescItem{V_y}{уточнённый объём ПО;}
@@ -52,16 +52,21 @@
 
 Стоимостная оценка программного средства у разработчика предполагает составление сметы затрат, которая включает следующие статьи расходов:
 
-\begin{itemize}
-    \item[1.] Отчисления на социальные нужды ($\textup{Р}_\textup{соц}$).
-    \item[2.] Материалы и комплектующие изделия ($\textup{Р}_\textup{м}$).
-    \item[3.] Спецоборудование ($\textup{Р}_\textup{с}$).
-    \item[4.] Машинное время ($\textup{Р}_\textup{мв}$).
-    \item[5.] Расходы на научные командировки ($\textup{Р}_\textup{нк}$).
-    \item[6.] Прочие прямые расходы ($\textup{Р}_\textup{пр}$).
-    \item[7.] Накладные расходы ($\textup{Р}_\textup{нр}$).
-    \item[8.] Затраты на освоение и сопровождение программного средства ($\textup{Р}_\textup{о}$) и ($\textup{Р}_\textup{со}$).
-\end{itemize}
+1. Отчисления на социальные нужды ($\textup{Р}_\textup{соц}$).
+
+2. Материалы и комплектующие изделия ($\textup{Р}_\textup{м}$).
+
+3. Спецоборудование ($\textup{Р}_\textup{с}$).
+
+4. Машинное время ($\textup{Р}_\textup{мв}$).
+
+5. Расходы на научные командировки ($\textup{Р}_\textup{нк}$).
+
+6. Прочие прямые расходы ($\textup{Р}_\textup{пр}$).
+
+7. Накладные расходы ($\textup{Р}_\textup{нр}$).
+
+8. Затраты на освоение и сопровождение программного средства ($\textup{Р}_\textup{о}$) и ($\textup{Р}_\textup{со}$).
 
 Полная себестоимость ($\textup{С}_\textup{п}$) разработки программного продукта рассчитывается как сумма расходов по всем статьям с учётом рыночной стоимости аналогичных продуктов.
 
@@ -69,11 +74,10 @@
 
 Расчёт заработной платы разработчиков программного продукта начинается с определения:
 
-\begin{itemize}
-    \item[1.] Продолжительности времени разработки ($\textup{Ф}_\textup{рв}$), которое устанавливается студентом экспертным путём с учётом сложности, новизны программного обеспечения и фактически затраченного времени. 
-    В данном дипломном проекте ($\textup{Ф}_\textup{рв}$) -- \envGPRDevTimeMonthReadable.
-    \item[2.] Количества разработчиков программного обеспечения. 
-\end{itemize}
+1. Продолжительности времени разработки ($\textup{Ф}_\textup{рв}$), которое устанавливается студентом экспертным путём с учётом сложности, новизны программного обеспечения и фактически затраченного времени. 
+В данном дипломном проекте ($\textup{Ф}_\textup{рв}$) -- \envGPRDevTimeMonthReadable.
+
+2. Количества разработчиков программного обеспечения. 
 
 В данном дипломном проекте будет разработчик: инженер-программист.
 Заработная плата разработчиков определятся как сумма основной и дополнительной заработной платы всех исполнителей.
@@ -117,17 +121,17 @@ $\textup{ЗП}_\textup{доп}=\envGPRValueZPosn \cdot \frac{\envGPRExtraPayment
 
     \begin{tabular}{|c|c|c|c|c|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|}
         \hline
-        \multirow{2}*{\rotatebox[origin=c]{90}{Категория работников\hspace{1cm}}} 
-        & \multirow{2}*{\rotatebox[origin=c]{90}{Разряд\hspace{2.5cm}}} 
-        & \multirow{2}*{\rotatebox[origin=c]{90}{Тарифные коэффициент ($\textup{Т}_\textup{к}$)\hspace{0.5cm}}} 
-        & \multirow{2}*{\rotatebox[origin=c]{90}{$\textup{Ф}_\textup{рф}$, (дн.)\hspace{2.25cm}}} 
-        & \multirow{2}*{\rotatebox[origin=c]{90}{Коэффициент премии ($\textup{К}_\textup{пр}$)\hspace{0.5cm}}} 
+        \multirow{2}*{\rotatebox[origin=c]{90}{Категория работников\hspace{1.4cm}}} 
+        & \multirow{2}*{\rotatebox[origin=c]{90}{Разряд\hspace{4.1cm}}} 
+        & \multirow{2}*{\rotatebox[origin=c]{90}{Тарифные коэффициент ($\textup{Т}_\textup{к}$)\hspace{0.2cm}}} 
+        & \multirow{2}*{\rotatebox[origin=c]{90}{$\textup{Ф}_\textup{рф}$, (дн.)\hspace{3.55cm}}} 
+        & \multirow{2}*{\rotatebox[origin=c]{90}{Коэффициент премии ($\textup{К}_\textup{пр}$)\hspace{0.45cm}}} 
         & \multicolumn{3}{c|}{Заработная плата, бел.руб} \\ 
         \cline{6-8}
         & & & & & 
-        \rotatebox[origin=c]{90}{Основная\hspace{1.7cm}} 
-        & \rotatebox[origin=c]{90}{Дополнительная\hspace{1.5cm}}
-        & \rotatebox[origin=c]{90}{Всего\hspace{1.8cm}} \\[4.3cm]
+        \rotatebox[origin=c]{90}{Основная\hspace{2.9cm}} 
+        & \rotatebox[origin=c]{90}{Дополнительная\hspace{1.7cm}}
+        & \rotatebox[origin=c]{90}{Всего\hspace{3.6cm}} \\[3.3cm]
         \hline
         Инженер-программист & \envGPRDevCategory & \envGPRDevCategoryMultiplier & \envGPRDevTimeDays & \envGPRPremiumCoefficient & \envGPRValueZPosn & \envGPRValueZPdop & \envGPRValueZP \\
         \hline
