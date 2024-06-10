@@ -14,6 +14,10 @@
 
 \usepackage{graduation_project_report_common/styles/codeList}
 
+\renewcommand{\l@section}[2]{\@dottedtocline{1}{0em}{12pt}{#1}{#2}}
+\renewcommand{\l@subsection}[2]{\@dottedtocline{1}{0em}{12pt}{#1}{#2}}
+\renewcommand{\l@subsubsection}[2]{\@dottedtocline{1}{0em}{12pt}{#1}{#2}}
+
 \newcommand{\GPRAttachment}[5]{{
     \def \envCode {ДП.\envDiplomStudentGroupName\envDiplomStudentGroupNumber.\envDiplomStudentCard-\envDiplomNumber~#2~\envDiplomVersion}
     \ESKDsignature {\envCode} % обозначение документа
