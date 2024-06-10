@@ -1,23 +1,21 @@
 % \documentclass[a1paper, landscape, nocolumnxxxi, columnvii, simple]{eskdgraph}
 
 
-  \ESKDstyle{formII}
-  \newpage
+\ESKDstyle{formII}
+\ifGPRIllustrationOnePage
+  
+\else 
   \hspace{0pt}
-
-  \ifGPRIllustrationOnePage
-
-  \else 
-    \newpage
-    \setcounter{page}{1}
-    \ESKDthisStyle{empty}
-  \fi
-
+  \newpage
+  \newpage
+  \setcounter{page}{1}
+  \ESKDthisStyle{empty}
+  \thispagestyle{plain}
+  \pagestyle{plain}
+\fi
+\begin{center}
   \vspace*{\fill}
-  \noindent
-  \hspace*{-\oddsidemargin}%
-  \centering
-  \makebox[0pt][c]{
-    \includegraphics[scale=\VarGPRIllustrationScale]{\VarGPRIllustrationContent}
-  }
+  \includegraphics[scale=\VarGPRIllustrationScale]{\VarGPRIllustrationContent}
   \vspace*{\fill}
+  \newpage
+\end{center}
