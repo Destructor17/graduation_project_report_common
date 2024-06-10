@@ -1,6 +1,8 @@
 %% Подподразделы(\subsubsection) не выводим в содержании
 \setcounter{tocdepth}{2}
 
+\renewcommand{\numberline}[1]{#1~}
+
 \renewcommand{\l@section}[2]{\@dottedtocline{1}{0em}{\VarGPRTableOfContentIndexWidth}{#1}{#2}}
 \renewcommand{\l@subsection}[2]{\@dottedtocline{1}{0em}{\VarGPRTableOfContentIndexWidth}{#1}{#2}}
 \renewcommand{\l@subsubsection}[2]{\@dottedtocline{1}{0em}{\VarGPRTableOfContentIndexWidth}{#1}{#2}}
