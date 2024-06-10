@@ -1,11 +1,8 @@
 \usepackage{_build/config/env}
 \input{graduation_project_report_common/styles/personal/_preamble.tex}
-    
-\def \envCode {ДП.\envDiplomStudentGroupName\envDiplomStudentGroupNumber.\envDiplomStudentCard-\envDiplomNumber~12~\envDiplomVersion}
 
 \ESKDletter{}{Д}{П}
 \ESKDcolumnI {\ESKDfontIII \envDiplomTitle \\ \vspace{1em} Текст программы} % наименование изделия/документа
-\ESKDsignature {\envCode} % обозначение документа
 \ESKDcolumnIX {\ESKDfontV \envDiplomEnterprice} % наименование или различительный индекс предприятия
 \ESKDcolumnXIfI {\ESKDfontII\envDiplomStudentSurname~\envDiplomStudentInitials} % Разраб.
 \ESKDcolumnXIfII {\ESKDfontII \envDiplomTeacherSurname~\envDiplomTeacherInitials} % Пров.
@@ -17,10 +14,12 @@
 
 \usepackage{graduation_project_report_common/styles/codeList}
 
-\newcommand{\GPRAttachment}[4]{{
+\newcommand{\GPRAttachment}[5]{{
+    \def \envCode {ДП.\envDiplomStudentGroupName\envDiplomStudentGroupNumber.\envDiplomStudentCard-\envDiplomNumber~#2~\envDiplomVersion}
+    \ESKDsignature {\envCode} % обозначение документа
     \def \VarGPRAttachmentLetter {#1}
-    \def \VarGPRAttachmentTitle {#2}
-    \def \VarGPRAttachmentAnnotation {#3}
-    \def \VarGPRAttachmentContent {#4}
+    \def \VarGPRAttachmentTitle {#3}
+    \def \VarGPRAttachmentAnnotation {#4}
+    \def \VarGPRAttachmentContent {#5}
     \input{graduation_project_report_common/attachment/attachment.tex}
 }}

@@ -6,9 +6,13 @@
   \newpage
   \hspace{0pt}
 
-  \newpage
-  \setcounter{page}{1}
-  \ESKDthisStyle{empty}
+  \ifGPRIllustrationOnePage
+
+  \else 
+    \newpage
+    \setcounter{page}{1}
+    \ESKDthisStyle{empty}
+  \fi
 
   \vspace*{\fill}
   \noindent
