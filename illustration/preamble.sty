@@ -30,10 +30,8 @@
 \ESKDcolumnXIfVI {\ESKDfontII \envDiplomHeadCathedraSurname~\envDiplomHeadDepartmentInitials} % Утв.
 
 
-\newcommand{\GPRIllustration}[4][0.707]{{
-    \def \VarGPRIllustrationIndex {#2}
-    \def \VarGPRIllustrationTitle {#3}
-    \def \VarGPRIllustrationContent {#4}
+\newcommand{\GPRIllustration}[2][0.707]{{
+    \def \VarGPRIllustrationContent {#2}
     \def \VarGPRIllustrationScale {#1}
     \input{graduation_project_report_common/illustration/illustration.tex}
 }}
