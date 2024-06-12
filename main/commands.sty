@@ -60,10 +60,12 @@
 \newcounter{GPREquationDescItemCount}
 \newcommand{\GPREquation}[2]{{
     \setcounter{GPREquationDescItemCount}{0}
-    \begin{equation}
-        #2
-        \label{eq:#1}
-    \end{equation}
+    \begin{adjustwidth}{0pt}{20mm}   
+        \begin{equation}
+            #2
+            \label{eq:#1}
+        \end{equation}
+    \end{adjustwidth}
 }}
 \newcommand{\GPREquationDesc}[1]{{
     \def \VarGPREquationDescItemUsed {0}
