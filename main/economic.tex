@@ -81,6 +81,7 @@
 
 В данном дипломном проекте будет разработчик: инженер-программист.
 Заработная плата разработчиков определятся как сумма основной и дополнительной заработной платы всех исполнителей.
+
 \GPREquation{economic_ZP_osn}{
     \textup{ЗП}_\textup{осн}=\textup{Т}_\textup{бтс} \cdot \frac{\textup{Т}_\textup{к}}{\textup{Ф}_\textup{эфф.р.в.}} \cdot \textup{Ф}_\textup{рв} \cdot \textup{К}_\textup{пр}
 }
@@ -99,6 +100,7 @@ $\textup{ЗП}_\textup{осн} = \envGPRBaseRate \cdot \frac{\envGPRDevCategoryM
 
 Дополнительная заработная плата $\textup{ЗП}_\textup{доп}$ каждого исполнителя рассчитывается от
 основной заработной платы по формуле \ref{eq:economic_ZP_dop}.
+
 \GPREquation{economic_ZP_dop}{
     \textup{ЗП}_\textup{доп}=\textup{ЗП}_\textup{осн} \cdot \frac{\textup{Н}_\textup{доп.зп}}{100\%}
 }
@@ -143,7 +145,8 @@ $\textup{ЗП}_\textup{доп}=\envGPRValueZPosn \cdot \frac{\envGPRExtraPayment
 Таким образом, как видно из таблицы, заработная плата инженера-программиста составляет \envGPRValueZP~бел. руб.
 
 Отчисления на социальные нужды $\textup{Р}_\textup{соц}$ определяются по формуле (\ref{eq:economic_social}) в соответствии с действующим законодательством по нормативу.
-\GPREquation{economic_social}{
+
+\GPREquationNoDesc{economic_social}{
     \textup{Р}_\textup{соц}=(\textup{ЗП}_\textup{осн} + \textup{ЗП}_\textup{доп}) \cdot \frac{35\%}{100\%}
 }
 
@@ -153,6 +156,7 @@ $\textup{Р}_\textup{соц}=(\envGPRValueZPosn + \envGPRValueZPdop) \cdot \frac
 
 Расходы на материалы и комплектующие $\textup{Р}_\textup{м}$ отражают расходы на магнитные носители, бумагу, красящие ленты и другие материалы, необходимые для разработки программного продукта. 
 Норма расхода материалов в суммарном выражении определяется в процентах к основной заработной плате (\ref{eq:economic_material}).
+
 \GPREquation{economic_material}{
     \textup{Р}_\textup{м}=\textup{ЗП}_\textup{осн} \cdot \frac{\textup{Н}_\textup{мз}}{100}
 }
@@ -206,7 +210,7 @@ $\textup{Р}_\textup{нр} = \frac{\envGPROtherSpendsPercents\%}{100\%} \cdot \e
 
 Сумма вышеперечисленных расходов по статьям $\textup{СЗ}$ на программный продукт служит исходной базой для расчёта затрат на освоение и сопровождение программного продукта. 
 Они рассчитываются по формуле (\ref{eq:economic_spends_sum}).
-\GPREquation{economic_spends_sum}{
+\GPREquationNoDesc{economic_spends_sum}{
     \textup{СЗ} = \textup{ЗП}_\textup{осн} + \textup{ЗП}_\textup{доп} + \textup{Р}_\textup{соц} + \textup{Р}_\textup{м} + \textup{Р}_\textup{с} + \textup{Р}_\textup{мв} + \textup{Р}_\textup{нк} + \textup{Р}_\textup{пр} + \textup{Р}_\textup{нр}
 }
 
@@ -247,7 +251,7 @@ $\textup{Р}_\textup{со} = \envGPRValueSR \cdot \frac{\envGPRSupportSpendsPerc
 
 Полная себестоимость ($\textup{СП}$) разработки программного продукта рассчитывается как сумма расходов по всем статьям. 
 Она определяется по формуле (\ref{eq:economic_sum_2}).
-\GPREquation{economic_sum_2}{
+\GPREquationNoDesc{economic_sum_2}{
     \textup{СП} = \textup{СЗ} + \textup{Р}_\textup{о} + \textup{Р}_\textup{со}
 }
 Рассчитаем полную себестоимость продукта:
@@ -319,7 +323,7 @@ $\textup{П} = \envGPRValueSP \cdot \frac{\envGPRProfitabilityPercents\%}{100\%}
 
 После расчета прибыли от реализации по формуле (\ref{eq:economic_overpriced}) определяется прогнозируемая цена программного продукта без налогов $\textup{Ц}_\textup{п}$.
 
-\GPREquation{economic_overpriced}{
+\GPREquationNoDesc{economic_overpriced}{
     \textup{Ц}_\textup{п} = \textup{СП} + \textup{П}
 }
 Рассчитаем цену программного продукта без налогов:
