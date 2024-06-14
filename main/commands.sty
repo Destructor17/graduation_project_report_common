@@ -60,10 +60,10 @@
 \newcounter{GPREquationDescItemCount}
 \newcommand{\GPREquationNoDesc}[2]{
     \GPREquation{#1}{#2}
-    ~ \\
+    \vspace{0.5cm}
 }
 \newcommand{\GPREquation}[2]{{
-    ~ \\
+    \vspace{0.5cm}
     \setcounter{GPREquationDescItemCount}{0}
     \begin{adjustwidth}{0pt}{20mm}   
         \begin{equation}
@@ -79,7 +79,7 @@
         \setlength{\labelwidth}{60pt}
         #1
     \end{itemize}
-    ~ \\
+    \vspace{0.5cm}
 }}
 
 \newcommand{\GPREconomicSection}[2]{{
