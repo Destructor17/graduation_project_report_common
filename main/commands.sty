@@ -54,11 +54,16 @@
         \ifdim\theGPREquationDescItemCount pt=0pt
             где
         \fi
-    ] $#1$ -- #2
+    ] \hspace{0.25cm} $#1$ -- #2
     \addtocounter{GPREquationDescItemCount}{1}
 }}
 \newcounter{GPREquationDescItemCount}
+\newcommand{\GPREquationNoDesc}[2]{
+    \GPREquation{#1}{#2}
+    ~ \\
+}
 \newcommand{\GPREquation}[2]{{
+    ~ \\
     \setcounter{GPREquationDescItemCount}{0}
     \begin{adjustwidth}{0pt}{20mm}   
         \begin{equation}
@@ -71,8 +76,10 @@
     \def \VarGPREquationDescItemUsed {0}
     \begin{itemize}
         \setlength{\itemindent}{60pt}
+        \setlength{\labelwidth}{60pt}
         #1
     \end{itemize}
+    ~ \\
 }}
 
 \newcommand{\GPREconomicSection}[2]{{
